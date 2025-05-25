@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+
+#root {
+
+   justify-content: space-between;
+  
+ width: 100vw;
+  text-align: center;
+  
+}

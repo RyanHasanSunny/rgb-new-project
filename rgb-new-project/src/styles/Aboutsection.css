@@ -1,0 +1,115 @@
+/* Welcome Page Styles */
+
+/* Main container */
+#aboutsection {
+  min-height: 100vh;
+  display: flex;
+  width: 99vw;
+  justify-content: center;
+ 
+}
+
+
+
+ h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Main content section */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 40vh;
+  padding: 0 2rem;
+  padding-right: 4rem;
+}
+
+.content-wrapper {
+  max-width: 32rem;
+  text-align: right;
+}
+
+.main-title {
+  font-size: 2.25rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #9ca3af; /* gray-400 */
+  margin-bottom: 0.5rem;
+}
+
+.divider {
+  width: 4rem;
+  height: 1px;
+  background-color: #4b5563; /* gray-600 */
+  margin-left: auto;
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #d1d5db; /* gray-300 */
+  line-height: 1.625;
+  max-width: 32rem;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.bottom-nav p {
+  font-size: 0.875rem;
+  color: #9ca3af; /* gray-400 */
+  margin-bottom: 0.25rem;
+}
+
+/* Right side navigation */
+.right-nav {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #9ca3af; /* gray-400 */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-arrow:hover {
+  color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    padding-right: 2rem;
+    align-items: center;
+  }
+  
+  .content-wrapper {
+    text-align: center;
+  }
+  
+  .divider {
+    margin: 0 auto 2rem auto;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+  }
+}
