@@ -13,7 +13,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
 a {
@@ -47,9 +46,8 @@ h2 {
 
 .buttons{
   position: fixed;
- top: 5%;
+  top: 5%;
   left: 0%;
-
 }
 
 button {
@@ -60,7 +58,6 @@ button {
   font-weight: 500;
   font-family: inherit;
   margin-inline: 10%;
- 
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -72,15 +69,212 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 4em;
   }
-  a:hover {
-    color: #747bff;
+  
+  h2 {
+    font-size: 1.75rem;
+    letter-spacing: 0.12em;
   }
+  
+  .buttons {
+    left: 1%;
+  }
+  
   button {
-    background-color: #f9f9f9;
+    padding: 0.7em 1.4em;
+    font-size: 1.1em;
+    margin-inline: 12%;
+  }
+}
+
+/* Desktop (1200px - 1439px) */
+@media (max-width: 1439px) and (min-width: 1200px) {
+  h1 {
+    font-size: 3.6em;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+    letter-spacing: 0.11em;
+  }
+  
+  button {
+    padding: 0.65em 1.3em;
+    font-size: 1.05em;
+    margin-inline: 11%;
+  }
+}
+
+/* Large Tablet Landscape (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  h1 {
+    font-size: 3.2em;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .buttons {
+    top: 4%;
+  }
+  
+  button {
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    margin-inline: 10%;
+  }
+}
+
+/* Tablet Portrait (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  h1 {
+    font-size: 2.8em;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    letter-spacing: 0.09em;
+  }
+  
+  .buttons {
+    top: 3.5%;
+    left: 0.5%;
+  }
+  
+  button {
+    padding: 0.55em 1.1em;
+    font-size: 0.95em;
+    margin-inline: 8%;
+  }
+}
+
+/* Mobile Landscape (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+  }
+  
+  .buttons {
+    top: 3%;
+    left: 0%;
+  }
+  
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+    margin-inline: 6%;
+    border-radius: 6px;
+  }
+}
+
+/* Mobile Portrait (480px - 575px) */
+@media (max-width: 575px) and (min-width: 480px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0.07em;
+  }
+  
+  .buttons {
+    top: 2.5%;
+    left: -0.5%;
+  }
+  
+  button {
+    padding: 0.45em 0.9em;
+    font-size: 0.85em;
+    margin-inline: 5%;
+    border-radius: 5px;
+  }
+}
+
+/* Small Mobile (320px - 479px) */
+@media (max-width: 479px) {
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+  }
+  
+  .buttons {
+    top: 2%;
+    left: -1%;
+  }
+  
+  button {
+    padding: 0.4em 0.8em;
+    font-size: 0.8em;
+    margin-inline: 4%;
+    border-radius: 4px;
+  }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  h2 {
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .buttons {
+    top: 1.5%;
+    left: -1.5%;
+  }
+  
+  button {
+    padding: 0.35em 0.7em;
+    font-size: 0.75em;
+    margin-inline: 3%;
+    border-radius: 3px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .buttons {
+    top: 1%;
+  }
+  
+  button {
+    padding: 0.3em 0.6em;
+    font-size: 0.8em;
+  }
+  
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+/* Very short screens */
+@media (max-height: 400px) {
+  .buttons {
+    top: 0.5%;
+  }
+  
+  button {
+    padding: 0.25em 0.5em;
+    font-size: 0.75em;
+    margin-inline: 2%;
   }
 }

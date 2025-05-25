@@ -6,7 +6,7 @@ export default function Aboutsection() {
   return (
     <div id='aboutsection' className="aboutsection flex flex-col h-screen justify-evenly " style={{paddingInline: '5%'}}>
       {/* Header */}
-      <div className="p-8">
+      <div className="">
         <h2 className="text-2xl fon">Welcome</h2>
       </div>
 
@@ -31,7 +31,7 @@ export default function Aboutsection() {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex justify-between items-end px-8 ">
+      <div className="flex justify-between items-end  ">
        
         <div className="text-sm text-gray-400">
           <h2 className="mb-1">Explore Our Services,</h2>
