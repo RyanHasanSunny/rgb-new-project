@@ -52,13 +52,13 @@ function App() {
       <style>{`
         @keyframes bounce {
           0%, 20%, 50%, 80%, 100% {
-            transform: rotate(45deg) translateY(0);
+            transform:  translateY(0);
           }
           40% {
-            transform: rotate(45deg) translateY(-20px);
+            transform:  translateY(-20px);
           }
           60% {
-            transform: rotate(45deg) translateY(-10px);
+            transform:  translateY(-10px);
           }
         }
         
@@ -108,7 +108,7 @@ function App() {
       
       <div className="min-h-screen  overflow -x-hidden">
         {/* Navigation Indicator */}
-        <div className="buttons fixed  left-6 transform -translate-y-1/2 z-50">
+        <div className="buttons transform-translate-y-1/2 z-50">
           <button
             onClick={() => scrollToSection('hero')}
             className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
