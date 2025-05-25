@@ -14,7 +14,7 @@ export default function Aboutsection() {
       <div className="flex flex-col items-end justify-center min-h-[60vh] px-8" style={{paddingRight: '10%'}}>
         <div className="content-wrapper">
           <h2 className="main-title">It's me</h2>
-          <p className="subtitle">Ryan Harsh Sunny</p>
+          <p className="subtitle">Ryan Hasan Sunny</p>
           
           <div className="divider"></div>
           

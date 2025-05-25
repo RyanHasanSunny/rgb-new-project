@@ -111,7 +111,7 @@ function App() {
         <div className="buttons transform-translate-y-1/2 z-50">
           <button
             onClick={() => scrollToSection('hero')}
-            className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
+            className={`w-2 h-2 rounded-full border-2 transition-all duration-300 ${
               currentSection === 'hero' 
               ? 'bg-white border-white' 
               : 'border-gray-500 hover:border-white'
