@@ -83,7 +83,7 @@ button:focus-visible {
   }
   
   .buttons {
-    left: 1%;
+    left: 2%;
   }
   
   button {
@@ -144,7 +144,7 @@ button:focus-visible {
   
   .buttons {
    
-    left: 0.5%;
+   left: 2%;
   }
   
   button {
@@ -167,7 +167,7 @@ button:focus-visible {
   
   .buttons {
    
-    left: 0%;
+   left: 2%;
   }
   
   button {
@@ -191,7 +191,7 @@ button:focus-visible {
   
   .buttons {
    
-    left: -0.5%;
+  left: 2%;
   }
   
   button {
@@ -215,7 +215,7 @@ button:focus-visible {
   
   .buttons {
    
-    left: -1%;
+  left: 2%;
   }
   
   button {
@@ -239,7 +239,7 @@ button:focus-visible {
   
   .buttons {
    
-    left: -1.5%;
+    left: 2%;
   }
   
   button {
