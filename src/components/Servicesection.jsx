@@ -2,12 +2,12 @@ import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import "../styles/Aboutsection.css";
 
-export default function Aboutsection() {
+export default function Servicesection() {
   return (
-    <div id='aboutsection' className="aboutsection flex flex-col h-screen justify-evenly " style={{paddingInline: '5%'}}>
+    <div id='servicesection' className="aboutsection flex flex-col h-screen justify-evenly " style={{paddingInline: '5%'}}>
       {/* Header */}
       <div className="">
-        <h2 className="welcome text-2xl ">Welcome</h2>
+        <h2 className="welcome text-2xl ">Services</h2>
       </div>
 
       {/* Main Content */}

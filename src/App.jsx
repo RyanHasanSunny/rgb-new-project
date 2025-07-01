@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Herosection from './components/Herosection';
 import Aboutsection from './components/Aboutsection';
+import Servicesection from './components/Servicesection';
 
 function App() {
   const [currentSection, setCurrentSection] = useState('hero');
@@ -129,7 +130,7 @@ function App() {
           />
 
             <button
-            onClick={() => scrollToSection('about')}
+            onClick={() => scrollToSection('service')}
             className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
               currentSection === 'service' 
               ? 'bg-white border-white' 
@@ -149,9 +150,9 @@ function App() {
           <Aboutsection onScrollToHero={() => scrollToSection('service')} />
         </section>
 
-        {/* About Section */}
+        {/* Service Section */}
         <section id="service">
-          <Aboutsection onScrollToHero={() => scrollToSection('hero')} />
+          <Servicesection onScrollToHero={() => scrollToSection('hero')} />
         </section>
 
 

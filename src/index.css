@@ -55,7 +55,7 @@ h2 {
 
 button {
   border-radius: 10px;
-  border: 1px solid color(srgb red green blue);
+  border: 1px solid #ffffff;
   padding: 0.1em 0.3em;
   font-size: 1em;
   font-weight: 500;
