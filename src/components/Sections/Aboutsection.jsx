@@ -6,7 +6,7 @@ export default function Aboutsection() {
   return (
     <div
       id='aboutsection'
-      className="aboutsection flex flex-col h-full justify-evenly px-[5%] py-8 space-y-8"
+      className="aboutsection flex flex-col h-full justify-center px-[5%] py-8 space-y-8"
     >
       {/* Header */}
       {/* <div>
@@ -14,12 +14,12 @@ export default function Aboutsection() {
       </div> */}
 
       {/* Main Content */}
-      <div className="flex flex-col items-center justify-center min-h-[60vh] sm:px-6 md:px-10">
+      <div className="flex flex-col items-center justify-center min-h-[80vh] sm:px-6 md:px-10">
         <div className="content-wrapper max-w-xl w-full space-y-6">
           <h2 className="main-title text-white text-2xl sm:text-3xl md:text-4xl">It's me</h2>
 
-          <div className="flex items-center justify-between gap-4 pb-6 flex-wrap sm:flex-nowrap">
-            <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center shrink-0">
+          <div className="img-name-wrapper gap-4 p-6 flex-wrap sm:flex-nowrap">
+            <div className="w-36 h-36 bg-gray-800 rounded-half flex items-center justify-center shrink-0">
               <img src="https://via.placeholder.com/50" alt="Profile" className="rounded-full w-12 h-12" />
             </div>
             <div className="flex flex-col text-white">

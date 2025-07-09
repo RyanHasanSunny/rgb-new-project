@@ -51,14 +51,24 @@ h1 {
 
 .main-title {
   font-size: 2.25rem;
-  font-weight: 300;
+  font-weight: 800;
   margin-bottom: 1rem;
+  text-align: center
 }
 
 .subtitle {
   font-size: 1.5rem;
   color: #9ca3af; /* gray-400 */
   margin-bottom: 0.5rem;
+}
+.img-name-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  background-color: #3eccc50a;
+  border: 1px solid #3eccc5; /* gray-600 */
 }
 
 .divider {
@@ -182,7 +192,6 @@ h1 {
   }
   
   .content-wrapper {
-    text-align: center;
     max-width: 28rem;
   }
   
@@ -230,6 +239,10 @@ h1 {
   .content-wrapper {
     text-align: center;
     max-width: 24rem;
+  }
+  .img-name-wrapper {
+    justify-content: center;
+    gap: 0.5rem;
   }
   
   .divider {
@@ -290,6 +303,11 @@ h1 {
   .content-wrapper {
     text-align: center;
     max-width: 20rem;
+  }
+
+  .img-name-wrapper {
+   justify-content: center;
+    gap: 0.5rem;
   }
   
   .divider {
@@ -352,6 +370,11 @@ h1 {
     max-width: 18rem;
   }
   
+  .img-name-wrapper {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
   .divider {
     margin: 0 auto 1rem auto;
     width: 2rem;

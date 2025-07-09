@@ -3,23 +3,21 @@ import Grid from "../../Grid";
 
 const ServiceContainer = ({ title, description, Icon }) => {
   return (
-    <div className="w-full min-h-screen p-6 rounded-lg flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-10 md:space-y-0" >
+    <div className="w-full min-h-screen  flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-10 md:space-y-0" >
 
       {/* Left Section */}
-      <div className="flex items-center bg-gray-800 justify-center" style={{ backgroundColor: "rgba(26, 27, 26, 0.92)", height: "400px", width: "40%" }} >
-        <div className="icon-container p-4 shadow-md" >
+      <div className="flex items-center  justify-center" style={{  height: "200px", width: "40%" }} >
           <img
-            src="https://via.placeholder.com/150"
-            alt={title}
-            className="w-32 h-32 md:w-48 md:h-48 rounded-full shadow-lg"
+            src={Icon}
+            alt={Icon}
+            className="w-full h-500 md:w-full md:h-150 object-contain"
+            style={{ filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.5))" }}
           />
-
-        </div>
       </div>
 
       {/* Right Section */}
       <div className="content-wrapper text-center md:text-left px-4">
-        <h2 className="main-title text-2xl md:text-4xl font-bold text-white">
+        <h2 className="title text-2xl md:text-4xl font-bold text-white">
           {title}
         </h2>
 

@@ -4,43 +4,29 @@ import { ChevronDown } from 'lucide-react';
 import "../../styles/Aboutsection.css";
 import SectionContainer from '../Container/Section_Container/Section_Container';
 import ServiceContainer from '../Container/Services/ServiceContainer';
+import GraphicDesignIcon from '../../assets/graphicdesign.svg';
+import webdev from '../../assets/webdev.svg';
+import ModelingIcon from '../../assets/3dmodeling.svg'; // Ensure you have a 3DModelingIcon imported
+
 
 export default function Servicesection() {
   return (
-    <SectionContainer id="servicesection" title="Services">
+    <SectionContainer id="servicesection" >
       {/* Service Cards */}
       <ServiceContainer
         title="Web Design"
         description="Creating stunning and user-friendly websites that captivate your audience and drive engagement."
-        Icon={() => (
-          <img
-            src="https://via.placeholder.com/50"
-            alt="Web Design Icon"
-            className="w-12 h-12"
-          />
-        )}
+        Icon={webdev}
       />
       <ServiceContainer
         title="Graphic Design"
         description="Crafting visually appealing graphics that communicate your brand's message effectively."
-        Icon={() => (
-          <img
-            src="https://via.placeholder.com/50"
-            alt="Graphic Design Icon"
-            className="w-12 h-12"
-          />
-        )}
+        Icon={GraphicDesignIcon}
       />
       <ServiceContainer
-        title="Game Development"
-        description="Developing immersive and engaging games that provide unforgettable experiences."
-        Icon={() => (
-          <img
-            src="https://via.placeholder.com/50"
-            alt="Game Development Icon"
-            className="w-12 h-12"
-          />
-        )}
+        title="3D Modeling"
+        description="Bringing your ideas to life with detailed and realistic 3D models for various applications."
+        Icon={ModelingIcon} // Ensure you have a 3DModelingIcon imported
       />
 
       {/* Sticky Chevron Arrows */}
