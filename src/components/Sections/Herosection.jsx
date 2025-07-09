@@ -3,11 +3,7 @@ import "../../styles/Herosection.css";
 
 const Herosection = () => {
   return (
-    <section id="herosection" className="section">
-      {/* Email - Bottom Left Rotated */}
-      <div className="hero-email">
-        <h2 className="email-text">ryangraphicboy@gmail.com</h2>
-      </div>
+    <section id="hero" className="section">
 
       {/* Centered Content */}
       <div className="hero-content">
@@ -17,17 +13,22 @@ const Herosection = () => {
 
       {/* More Button - Top Right */}
       <div className="hero-more">
-      <div className="more-button">
-        <div className="line"></div>
-        <div className="line"></div>
-      </div>
+        <div className="more-button">
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
       </div>
 
+      <div className="contact-info ">
+      {/* Email - Bottom Left Rotated */}
+      <div className="hero-email">
+        <h2 className="email-text">ryangraphicboy@gmail.com</h2>
+      </div>
       {/* Animated Arrow - Bottom Right */}
-      <a  href="#aboutsection" className="arrow-container">
+      <a href="#about" className="arrow-container" aria-label="Scroll to about section">
         <div className="arrow-down"></div>
-        
       </a>
+      </div>
     </section>
   );
 };

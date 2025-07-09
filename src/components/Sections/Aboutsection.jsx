@@ -32,9 +32,7 @@ export default function Aboutsection() {
 
           <div className="divider h-px bg-gray-700 w-full" />
 
-          <p className="text-sm text-gray-300 leading-relaxed">
-            I am a passionate designer and developer with a keen eye for detail. My journey in the world of design and development has been driven by a desire to create visually stunning and user-friendly experiences. Whether it's crafting engaging graphics, developing immersive games, or designing intuitive websites, I strive to bring innovation and excellence to every project I undertake.
-            <br /> <br /> 
+          <p className="text-sm text-gray-300 leading-relaxed"> 
             I believe in the power of collaboration and communication, working closely with clients to understand their vision and goals. My commitment to continuous learning and staying updated with the latest trends in design and development allows me to bring fresh ideas and innovative solutions to the table.
           </p>
         </div>

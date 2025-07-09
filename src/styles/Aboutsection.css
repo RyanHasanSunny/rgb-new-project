@@ -67,8 +67,7 @@ h1 {
   justify-content: space-between;
   gap: 1rem;
   border-radius: 0.5rem;
-  background-color: #3eccc50a;
-  border: 1px solid #3eccc5; /* gray-600 */
+  
 }
 
 .divider {
@@ -303,6 +302,7 @@ h1 {
   .content-wrapper {
     text-align: center;
     max-width: 20rem;
+    
   }
 
   .img-name-wrapper {

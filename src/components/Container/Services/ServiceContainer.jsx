@@ -1,18 +1,17 @@
 import React from "react";
-import Grid from "../../Grid";
 
-const ServiceContainer = ({ title, description, Icon }) => {
+const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
   return (
-    <div className="w-full min-h-screen  flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-10 md:space-y-0" >
+    <div className="w-full min-h-screen flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-10 md:space-y-0">
 
       {/* Left Section */}
-      <div className="flex items-center  justify-center" style={{  height: "200px", width: "40%" }} >
-          <img
-            src={Icon}
-            alt={Icon}
-            className="w-full h-500 md:w-full md:h-150 object-contain"
-            style={{ filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.5))" }}
-          />
+      <div className="flex items-center justify-center" style={{ height: "200px", width: "40%" }}>
+        <img
+          src={Icon}
+          alt={title}
+          className="w-full h-500 md:w-full md:h-150 object-contain"
+          style={{ filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.5))" }}
+        />
       </div>
 
       {/* Right Section */}
@@ -26,6 +25,18 @@ const ServiceContainer = ({ title, description, Icon }) => {
         <p className="text-sm text-gray-300 leading-relaxed max-w-md md:max-w-lg">
           {description}
         </p>
+
+        {/* Image List */}
+        <div className="img-wrapper flex items-center justify-center md:justify-end mt-4 space-x-2">
+          {iconList.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`${title} icon ${index + 1}`}
+              className="w-8 h-8  transition-transform transform hover:scale-110" style={{ filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.5))" }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
