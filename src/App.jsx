@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
-import Herosection from './components/Herosection';
-import Aboutsection from './components/Aboutsection';
-import Servicesection from './components/Servicesection';
+import Herosection from './components/Sections/Herosection';
+import Aboutsection from './components/Sections/Aboutsection';
+import Servicesection from './components/Sections/Servicesection';
+import FeatureSection from './components/Sections/Featuresection';
+import Workdetails from './components/Sections/Workdetails';
 
 function App() {
   const [currentSection, setCurrentSection] = useState('hero');
@@ -145,6 +147,9 @@ function App() {
           <Herosection onScrollToAbout={() => scrollToSection('about')} />
         </section>
 
+        {/* <div className="flex justify-center items-center mt-10 h-screen" style={{ zIndex: -1 }}>
+          </div> */}
+
         {/* About Section */}
         <section id="about">
           <Aboutsection onScrollToHero={() => scrollToSection('service')} />
@@ -152,8 +157,23 @@ function App() {
 
         {/* Service Section */}
         <section id="service">
-          <Servicesection onScrollToHero={() => scrollToSection('hero')} />
+          <Servicesection onScrollToHero={() => scrollToSection('features')} />
         </section>
+
+         {/* Service Section */}
+        <section id="features">
+          <FeatureSection onScrollToHero={() => scrollToSection('hero')} />
+        </section>
+
+
+         {/* Service Section */}
+        <section id="workdetails">
+          <Workdetails onScrollToHero={() => scrollToSection('hero')} />
+        </section>
+
+
+
+        
 
 
       </div>

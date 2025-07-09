@@ -1,0 +1,138 @@
+.portfolio {
+  justify-content: space-around;
+  gap: 1em; /* Adjust gap as needed */
+  padding: 2%;
+  box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbarbordar {
+  width: 100%;
+  position: sticky;
+  top: 90vh;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border: 0.5px solid rgba(240, 248, 255, 0.274);
+background-color: rgba(32, 31, 32, 0.562);
+  padding: 10px 20px;
+  box-shadow: 0px 5px 20px rgb(19, 17, 11);
+  overflow: hidden;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px; /* Space between navbar items */
+}
+
+.navbar-list li {
+  margin: 0;
+}
+
+.navbar-list a {
+  color: rgb(189, 197, 206);
+  text-decoration: none;
+  font-size: 12pt;
+  cursor: none;
+  transition: color 0.3s;
+}
+
+.navbar-list a:hover {
+  color: #ff6347; /* Add a hover effect */
+}
+
+.navbar-list a.active {
+  font-weight: bold;
+  color: #007bff; /* Change to your preferred highlight color */
+}
+
+.portfolio h2 {
+  color: beige;
+  font-size: 2rem;
+  margin-bottom: -14px;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.portfolio h2:hover {
+  opacity: 1;
+  transform: translate(10px);
+}
+
+.portfolio h3 {
+  color: beige;
+}
+
+.portfolio .section1 {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.portfolio .Contants {
+  align-content: center;
+  justify-content: center;
+}
+
+.portfolio .portfolio-list {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .navbar-list {
+    flex-wrap: wrap; /* Allow navbar items to wrap on smaller screens */
+    gap: 10px;
+  }
+
+  .navbar-list a {
+    font-size: 10pt; /* Smaller font size for mobile */
+  }
+
+  .portfolio h2 {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+    text-align: center;
+  }
+
+  .portfolio .portfolio-list {
+    gap: 1px; /* Reduce gap between items on mobile */
+    padding: 2%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-list {
+    gap: 5px; /* Further reduce gap for very small screens */
+  }
+
+  .navbar-list a {
+    font-size: 9pt; /* Even smaller font size for very small screens */
+  }
+
+  .portfolio h2 {
+    font-size: 1.2rem; /* Smaller font size for very small screens */
+  }
+}

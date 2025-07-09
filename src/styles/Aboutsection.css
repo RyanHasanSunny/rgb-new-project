@@ -2,10 +2,12 @@
 
 /* Main container */
 #aboutsection {
+  /* background: linear-gradient(to bottom, rgb(17, 24, 39), rgb(17, 24, 39)), url('https://via.placeholder.com/1920x1080'); */
   min-height: 100vh;
   display: flex;
   width: 99vw;
   justify-content: center;
+  z-index: 2;
 }
 
 h1 {
@@ -13,6 +15,22 @@ h1 {
   font-weight: 300;
 }
 
+
+.servicesection {
+  min-height: 100vh;
+  padding: 0 2rem;
+ 
+}
+
+.welcome {
+  position: sticky;
+  bottom: 0;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  padding-block: 1rem;
+  z-index: 10;
+}
 
 
 /* Main content section */
