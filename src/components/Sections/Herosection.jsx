@@ -19,7 +19,7 @@ const Herosection = () => {
         </div>
       </div>
 
-      <div className="contact-info ">
+      <div className="contact-info p-6 ">
       {/* Email - Bottom Left Rotated */}
       <div className="hero-email">
         <h2 className="email-text">ryangraphicboy@gmail.com</h2>

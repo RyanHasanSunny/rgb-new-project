@@ -21,7 +21,7 @@ export default function SectionContainer({ id, title, children }) {
           paddingBlock: '1rem',
         }}
       >
-        <h2 className="welcome text-2xl">{title}</h2>
+        <h2 className="welcome ">{title}</h2>
       </div>
 
       {/* Main Content */}

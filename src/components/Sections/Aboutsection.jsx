@@ -39,7 +39,7 @@ export default function Aboutsection() {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end gap-6">
+      <div className="flex flex-col sm:flex-row justify-between p-6 items-center sm:items-end gap-6">
         <div className="text-sm text-gray-400 text-center sm:text-left">
           <h2 className="mb-1">Explore Our Services,</h2>
           <h2>Where Innovation Meets Excellence</h2>
