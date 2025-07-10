@@ -1,91 +1,33 @@
 @import "tailwindcss";
 
+/* Base Layout Fixes */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
 #root {
-  justify-content: space-between;
-  
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Large Desktop (1440px+) */
-@media (min-width: 1440px) {
+/* Responsive Fixes */
+@media (max-width: 767px) {
   #root {
-    overflow-x: hidden;
-  }
-}
-
-/* Desktop (1200px - 1439px) */
-@media (max-width: 1439px) and (min-width: 1200px) {
-  #root {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-}
-
-/* Large Tablet Landscape (992px - 1199px) */
-@media (max-width: 1199px) and (min-width: 992px) {
-  #root {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-}
-
-/* Tablet Portrait (768px - 991px) */
-@media (max-width: 991px) and (min-width: 768px) {
-  #root {
-    width: 100vw;
-    overflow-x: hidden;
     text-align: center;
   }
 }
 
-/* Mobile Landscape (576px - 767px) */
-@media (max-width: 767px) and (min-width: 576px) {
+@media (orientation: landscape) and (max-height: 500px), (max-height: 400px) {
   #root {
-    width: 100vw;
-    overflow-x: hidden;
-    text-align: center;
-  }
-}
-
-/* Mobile Portrait (480px - 575px) */
-@media (max-width: 575px) and (min-width: 480px) {
-  #root {
-    width: 100vw;
-    overflow-x: hidden;
-    text-align: center;
-  }
-}
-
-/* Small Mobile (320px - 479px) */
-@media (max-width: 479px) {
-  #root {
-    width: 100vw;
-    overflow-x: hidden;
-    text-align: center;
-  }
-}
-
-/* Extra Small Mobile (below 320px) */
-@media (max-width: 319px) {
-  #root {
-    width: 100vw;
-    overflow-x: hidden;
-    text-align: center;
-  }
-}
-
-/* Landscape orientation adjustments */
-@media (orientation: landscape) and (max-height: 500px) {
-  #root {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-}
-
-/* Very short screens */
-@media (max-height: 400px) {
-  #root {
-    width: 100vw;
     overflow-x: hidden;
   }
 }

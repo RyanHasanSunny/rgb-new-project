@@ -12,15 +12,15 @@ export default function CollaborationSection() {
   return (
     <div
       id="collaborationsection"
-      className="collaborationsection h-screen flex items-between justify-center"
+      className="collaborationsection min-h-screen py-16 flex flex-col items-center justify-center"
     >
       <SectionContainer
         id="collaborationsection"
         title={`Ready to turn ideas into impact?\nWhether you're launching a new project or looking to elevate an existing one,\nwe’re here to bring your vision to life.`}
       >
-        {/* Main CTA Button */}
+        {/* CTA Buttons */}
         <div className="ButtonContainer">
-          <div className="button-in-row ">
+          <div className="button-in-row">
             <div
               className="collaboration-option"
               onClick={() => sendEmail("Graphic Design Inquiry")}
@@ -49,7 +49,7 @@ export default function CollaborationSection() {
         </div>
 
         {/* Description */}
-        <div className="collaboration-content text-center px-4">
+        <div className="collaboration-content text-center px-4 mt-8">
           <p className="collaboration-text">
             We believe in the power of collaboration and communication, working
             closely with clients to understand their vision and goals. Our
@@ -58,7 +58,7 @@ export default function CollaborationSection() {
             ideas and innovative solutions to the table.
           </p>
         </div>
-          </SectionContainer>
+      </SectionContainer>
     </div>
   );
 }
