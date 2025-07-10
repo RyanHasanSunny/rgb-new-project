@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import "../../styles/Aboutsection.css";
-import Ryan from '../../assets/ryan.jpg'; // Assuming you have a profile image
+import Ryan from '../../assets/Ryan.png'; // Assuming you have a profile image
 
 export default function Aboutsection() {
   return (
