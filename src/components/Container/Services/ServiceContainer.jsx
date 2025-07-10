@@ -11,15 +11,15 @@ const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
   return (
     <div
       ref={ref}
-      className="w-full min-h-screen flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-10 md:space-y-0"
+      className="w-full min-h-screen flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-25 md:space-y-25"
     >
       {/* Left Section with slide-in from left */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex items-center justify-center"
-        style={{ height: "200px", width: "25%" }}
+        className="flex items-center justify-start md:justify-center  rounded-lg shadow-lg p-4"
+        style={{ height: "200px" }}
       >
         <img
           src={Icon}
@@ -34,7 +34,7 @@ const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
         initial={{ opacity: 0, x: 100 }}
         animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        className="content-wrapper text-center md:text-left px-4"
+        className="content-wrapper text-center   md:text-left px-4"   
       >
         <h2 className="title text-2xl md:text-4xl py-2 font-bold text-white">
           {title}
