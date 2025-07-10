@@ -12,7 +12,7 @@ export default function SectionContainer({ id, title, children }) {
       style={{ paddingInline: '5%', paddingBottom: '5%' }}
     >
       {/* Conditional Sticky Header */}
-      <div
+      <div className="flex flex-col sm:flex-row justify-between p-6 items-center sm:items-end gap-6"
         style={{
           position: isSticky ? 'sticky' : 'static',
           justifyItems: isSticky ? 'left' : 'center',
@@ -21,8 +21,10 @@ export default function SectionContainer({ id, title, children }) {
           paddingBlock: '1rem',
         }}
       >
+        
         <h2 className="welcome ">{title}</h2>
-      </div>
+        </div>
+      
 
       {/* Main Content */}
       <div>{children}</div>
