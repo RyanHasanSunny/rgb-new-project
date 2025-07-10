@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import "../../styles/Aboutsection.css";
+import Ryan from '../../assets/ryan.jpg'; // Assuming you have a profile image
 
 export default function Aboutsection() {
   return (
@@ -20,7 +21,7 @@ export default function Aboutsection() {
 
           <div className="img-name-wrapper gap-4 p-6 flex-wrap sm:flex-nowrap">
             <div className="w-36 h-36 bg-gray-800 rounded-half flex items-center justify-center shrink-0">
-              <img src="https://via.placeholder.com/50" alt="Profile" className="rounded-full w-12 h-12" />
+              <img src={Ryan} alt="Profile" className="" />
             </div>
             <div className="flex flex-col text-white">
               <h3 className="text-base sm:text-lg font-semibold">Ryan Hasan Sunny</h3>
