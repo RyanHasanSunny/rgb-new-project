@@ -1,22 +1,42 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
-  return (
-    <div className="w-full min-h-screen flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-10 md:space-y-0">
+  const { ref, inView } = useInView({
+    threshold: 0.4, // Adjust for when to trigger animation
+    triggerOnce: false,
+  });
 
-      {/* Left Section */}
-      <div className="flex items-center justify-center" style={{ height: "200px", width: "40%" }}>
+  return (
+    <div
+      ref={ref}
+      className="w-full min-h-screen flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-10 md:space-y-0"
+    >
+      {/* Left Section with slide-in from left */}
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="flex items-center justify-center"
+        style={{ height: "200px", width: "25%" }}
+      >
         <img
           src={Icon}
           alt={title}
-          className="w-full h-500 md:w-full md:h-150 object-contain"
-          style={{ filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.5))" }}
+          className="w-full h-100 md:w-full md:h-100 object-contain"
+          style={{ filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.34))" }}
         />
-      </div>
+      </motion.div>
 
-      {/* Right Section */}
-      <div className="content-wrapper text-center md:text-left px-4">
-        <h2 className="title text-2xl md:text-4xl font-bold text-white">
+      {/* Right Section with slide-in from right */}
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        className="content-wrapper text-center md:text-left px-4"
+      >
+        <h2 className="title text-2xl md:text-4xl py-2 font-bold text-white">
           {title}
         </h2>
 
@@ -33,11 +53,14 @@ const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
               key={index}
               src={img}
               alt={`${title} icon ${index + 1}`}
-              className="w-8 h-8  transition-transform transform hover:scale-110" style={{ filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.5))" }}
+              className="w-8 h-8 transition-transform transform hover:scale-110"
+              style={{
+                filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.5))",
+              }}
             />
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

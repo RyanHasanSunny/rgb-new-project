@@ -6,7 +6,7 @@
   min-height: 100vh;
   display: flex;
   width: 99vw;
-  justify-content: center;
+  justify-content: space-between;
   z-index: 2;
 }
 
@@ -46,6 +46,11 @@ h1 {
   font-weight: 800;
   margin-bottom: 1rem;
   text-align: center
+}
+
+.welcome {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .subtitle {

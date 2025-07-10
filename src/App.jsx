@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import Herosection from './components/Sections/Herosection';
 import Aboutsection from './components/Sections/Aboutsection';
 import Servicesection from './components/Sections/Servicesection';
 import FeatureSection from './components/Sections/Featuresection';
 import Workdetails from './components/Sections/Workdetails';
+import Collaboration from './components/Sections/Collaboration';
+import Footer from './components/Sections/Footer';
+import './App.css'; // Import your main CSS file
 
 function App() {
   const [currentSection, setCurrentSection] = useState('hero');
@@ -96,7 +100,7 @@ function App() {
 
       <div className="min-h-screen overflow-x-hidden ">
         {/* Navigation Indicator */}
-        <div className="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 z-50">
+        <div className="fixed right-2 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 opasity z-50" style={{opacity:'.5'}}>
           <button
             onClick={() => scrollToSection('hero')}
             className={`w-2 h-2 rounded-full border-2 transition-all duration-300 ${
@@ -168,6 +172,21 @@ function App() {
         <section id="workdetails">
           <Workdetails onScrollToHero={() => scrollToSection('hero')} />
         </section>
+        
+        <section id="collaborationsection">
+            <Collaboration onScrollToHero={() => scrollToSection('hero')} />
+        </section>
+
+        {/* Footer Section */}
+        {/* <footer id="footer" className="bg-gray-900 text-white py-6">
+          <div className="container mx-auto text-center">
+            <p className="text-sm">
+              © {new Date().getFullYear()} ryangraphicboy. All rights reserved.
+            </p>
+          </div>
+        </footer> */}
+        <Footer />
+
       </div>
     </>
   );
