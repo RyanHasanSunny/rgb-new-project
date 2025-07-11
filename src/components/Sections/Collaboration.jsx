@@ -1,8 +1,8 @@
 import React from "react";
 import SectionContainer from "../Container/Section_Container/Section_Container";
 import "../../styles/FeatureSection.css";
-import  RocketIcon  from "../../assets/Rocket.svg"; // Adjust the import path as necessary
-import Land from "../../assets/land.svg"; // Adjust the import path as necessary
+import RocketIcon from "../../assets/Rocket.svg";
+import Land from "../../assets/land.svg";
 
 export default function CollaborationSection() {
   const sendEmail = (subject) => {
@@ -14,44 +14,44 @@ export default function CollaborationSection() {
   return (
     <div
       id="collaborationsection"
-      className="collaborationsection min-h-screen py-16 flex flex-col items-center justify-center"
+      className="collaborationsection min-h-screen py-16 flex flex-col items-center justify-center overflow-x-hidden" // ✅ Prevent horizontal scroll
     >
-      <div className="collaboration-image-container jump-animation flex justify-center mt-8">
-          <img
-            src={RocketIcon}
-            alt="Collaboration Illustration"
-            className="collaboration-image" style={{ width: "100%", maxWidth: "100px",  filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.34))" }}
-          />
-        </div>
+      {/* Rocket Icon */}
+      <div className="collaboration-image-container jump-animation flex justify-center mt-8 w-full max-w-xs mx-auto">
+        <img
+          src={RocketIcon}
+          alt="Collaboration Illustration"
+          className="collaboration-image"
+          style={{
+            width: "100%",
+            maxWidth: "100px",
+            filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.34))",
+          }}
+        />
+      </div>
+
+      {/* SectionContainer */}
       <SectionContainer
-        id="collaborationsection"
         title={`Ready to turn ideas into impact?\nWhether you're launching a new project or looking to elevate an existing one,\nwe’re here to bring your vision to life.`}
       >
         {/* CTA Buttons */}
         <div className="ButtonContainer">
-          <div className="button-in-row" style={{ filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.34))" }}>
-            <div
-              className="collaboration-option"
-              onClick={() => sendEmail("Graphic Design Inquiry")}
-            >
+          <div
+            className="button-in-row"
+            style={{
+              filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.34))",
+            }}
+          >
+            <div className="collaboration-option" onClick={() => sendEmail("Graphic Design Inquiry")}>
               Graphic Design
             </div>
-            <div
-              className="collaboration-option"
-              onClick={() => sendEmail("Web Design Inquiry")}
-            >
+            <div className="collaboration-option" onClick={() => sendEmail("Web Design Inquiry")}>
               Web Design
             </div>
-            <div
-              className="collaboration-option"
-              onClick={() => sendEmail("3D Modeling Inquiry")}
-            >
+            <div className="collaboration-option" onClick={() => sendEmail("3D Modeling Inquiry")}>
               3D Modeling
             </div>
-            <div
-              className="collaboration-option"
-              onClick={() => sendEmail("Other Project Inquiry")}
-            >
+            <div className="collaboration-option" onClick={() => sendEmail("Other Project Inquiry")}>
               Others
             </div>
           </div>
@@ -67,11 +67,18 @@ export default function CollaborationSection() {
             ideas and innovative solutions to the table.
           </p>
         </div>
-         <div className="collaboration-image-container  flex justify-center mt-8">
+
+        {/* Land Image */}
+        <div className="collaboration-image-container flex justify-center mt-8 w-full max-w-sm mx-auto">
           <img
             src={Land}
             alt="Collaboration Illustration"
-            className="collaboration-image" style={{ width: "100%", maxWidth: "200px",  filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.34))" }}
+            className="collaboration-image"
+            style={{
+              width: "100%",
+              maxWidth: "200px",
+              filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.34))",
+            }}
           />
         </div>
       </SectionContainer>

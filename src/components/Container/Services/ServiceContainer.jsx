@@ -42,7 +42,7 @@ const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
 
         <div className="divider my-4 h-1 w-16 bg-cyan-500 mx-auto md:mx-0"></div>
 
-        <p className="text-sm text-gray-300 leading-relaxed max-w-md md:max-w-lg">
+        <p className="text-gray-300 leading-relaxed max-w-md md:max-w-lg">
           {description}
         </p>
 
