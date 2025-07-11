@@ -2,7 +2,7 @@ import React from "react";
 import SectionContainer from "../Container/Section_Container/Section_Container";
 import "../../styles/FeatureSection.css";
 import RocketIcon from "../../assets/Rocket.svg";
-import Land from "../../assets/land.svg";
+import Land from "../../assets/Land.svg";
 
 export default function CollaborationSection() {
   const sendEmail = (subject) => {
