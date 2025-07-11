@@ -275,7 +275,7 @@
 /* Tablet Portrait (768px - 991px) */
 @media (max-width: 991px) and (min-width: 768px) {
   .hero-title {
-    font-size: 6rem;
+    font-size: 7rem;
     letter-spacing: 0.3rem;
   }
   
@@ -313,7 +313,7 @@
 /* Mobile Landscape (576px - 767px) */
 @media (max-width: 767px) and (min-width: 576px) {
   .hero-title {
-    font-size: 4.5rem;
+    font-size: 7rem;
     letter-spacing: 0.25rem;
   }
   
@@ -364,7 +364,7 @@
 /* Mobile Portrait (480px - 575px) */
 @media (max-width: 575px) and (min-width: 480px) {
   .hero-title {
-    font-size: 3.8rem;
+    font-size: 7rem;
     letter-spacing: 0.2rem;
   }
   
@@ -419,7 +419,7 @@
 /* Small Mobile (320px - 479px) */
 @media (max-width: 479px) {
   .hero-title {
-    font-size: 3.2rem;
+    font-size: 5rem;
     letter-spacing: 0.15rem;
   }
   
