@@ -33,7 +33,7 @@ export default function Aboutsection() {
 
           <div className="divider h-px bg-gray-700 w-full" />
 
-          <p className="description text-center text-gray-300 leading-relaxed"> 
+          <p className=" text-center text-gray-300 leading-relaxed"> 
             I believe in the power of collaboration and communication, working closely with clients to understand their vision and goals. My commitment to continuous learning and staying updated with the latest trends in design and development allows me to bring fresh ideas and innovative solutions to the table.
           </p>
         </div>
