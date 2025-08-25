@@ -1,0 +1,317 @@
+/* Reset & Base */
+body, h1, ul, li, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.admin-panel {
+  font-family: 'Inter', sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  width: 100vw;
+  padding: 1rem;
+}
+
+/* Header */
+.admin-header {
+  background: #1e1e2f;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Navigation */
+.admin-header ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.nav-link {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background: #5757ff;
+}
+
+/* Buttons */
+.admin-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.button {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #c92c38;
+}
+
+/* Sections */
+#sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Loading & Error */
+.loading-spinner,
+.error-message {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-header ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .admin-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-link,
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .admin-header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-panel {
+    padding: 0.5rem;
+  }
+
+  .admin-header {
+    padding: 0.8rem;
+  }
+
+  .nav-link,
+  .button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+
+
+/* Aboutme
+/* AboutMeSection Styling */
+.admin-sections {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.admin-sections h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+}
+
+.admin-sections .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-sections input,
+.admin-sections textarea {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  resize: vertical;
+  transition: border 0.3s;
+}
+
+.admin-sections input:focus,
+.admin-sections textarea:focus {
+  border-color: #5757ff;
+  outline: none;
+}
+
+.admin-sections .button {
+  align-self: flex-start;
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.admin-sections .button:hover {
+  background: #388e3c;
+}
+
+/* Loading/Error Message */
+.loading-spinner,
+.error-message {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-sections {
+    padding: 1.2rem;
+  }
+
+  .admin-sections h2 {
+    font-size: 1.4rem;
+  }
+
+  .admin-sections .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-sections input,
+  .admin-sections textarea {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ContactInfoSection Styles */
+.admin-sections {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.admin-sections h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+}
+
+.admin-sections .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-sections input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.admin-sections input:focus {
+  border-color: #5757ff;
+  outline: none;
+}
+
+.admin-sections .button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.3s ease;
+}
+
+.admin-sections .button:hover {
+  background: #0056b3;
+}
+
+/* Loading/Error Message */
+.loading-spinner,
+.error-message {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-sections {
+    padding: 1.2rem;
+  }
+
+  .admin-sections h2 {
+    font-size: 1.4rem;
+  }
+
+  .admin-sections .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-sections input {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.9rem;
+  }
+}
