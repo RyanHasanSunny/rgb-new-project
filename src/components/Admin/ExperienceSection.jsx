@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebaseConfig';
 import { collection, updateDoc, getDocs, doc, setDoc, getDoc } from 'firebase/firestore';
-import '../../Styles/AdminPanel.css';
+import '../../styles/AdminPanel.css';
 
 
 

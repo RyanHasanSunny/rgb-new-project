@@ -5,7 +5,7 @@ import { collection,  updateDoc,  getDocs, doc } from 'firebase/firestore';
 
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
-import '../../Styles/AdminPanel.css';
+import '../../styles/AdminPanel.css';
 
 const IntroductionSection = () => {
 

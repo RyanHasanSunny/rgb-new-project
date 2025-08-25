@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
-import '../../Styles/AdminPanel.css';
+import '../../styles/AdminPanel.css';
 
 
 const ContactInfoSection = ({ setIsAuthenticated }) => {

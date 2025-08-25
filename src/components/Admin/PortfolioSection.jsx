@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { db, storage } from '../../firebaseConfig';
 import { collection, addDoc, updateDoc, deleteDoc, getDocs, doc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import '../../Styles/AdminPanel.css';
+import '../../styles/AdminPanel.css';
 
 
 
