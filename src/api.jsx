@@ -1,5 +1,6 @@
-// src/components/api.js
-import { db } from './firebaseConfig'; // Adjust the path based on where you have your firebaseConfig.js
+// src/api.jsx
+import { db } from './firebaseConfig';
+import { collection, getDocs, updateDoc } from 'firebase/firestore';
 
 export const getContent = async () => {
   const snapshot = await db.collection('yourCollection').get(); // Change 'yourCollection' to your actual Firestore collection name
@@ -9,3 +10,19 @@ export const getContent = async () => {
 export const updateContent = async (id, newData) => {
   await db.collection('yourCollection').doc(id).update({ text: newData }); // Adjust the field as necessary
 };
+
+export const fetchSkills = async () => {
+  try {
+    const aboutDoc = await getDocs(collection(db, "about"));
+    if (!aboutDoc.empty) {
+      const aboutData = aboutDoc.docs[0].data();
+      return aboutData.skills || [];
+    }
+    return [];
+  } catch (error) {
+    console.error("Error fetching skills: ", error);
+    return [];
+  }
+};
+
+

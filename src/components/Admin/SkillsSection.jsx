@@ -34,11 +34,11 @@ const SkillsSection = () => {
     fetchData();
   }, []);
 
-  // Add a new skill with an empty images array and details field
+  // Add a new skill with an empty images array, details field, and featureimage
   const handleAddSkill = () => {
     setAboutMe((prev) => ({
       ...prev,
-      skills: [...prev.skills, { skill: "", images: [], details: "" }],
+      skills: [...prev.skills, { skill: "", images: [], details: "", featureimage: "" }],
     }));
   };
 
@@ -69,6 +69,29 @@ const SkillsSection = () => {
     } catch (error) {
       setError("Error uploading image: " + error.message);
       console.error("Error uploading image: ", error);
+    } finally {
+      setImageUploadLoading(false);
+    }
+  };
+
+  // Add feature image to a skill
+  const handleAddFeatureImage = async (index, e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setImageUploadLoading(true);
+    const storageRef = ref(storage, `skill-feature-images/${file.name}`);
+    try {
+      await uploadBytes(storageRef, file);
+      const url = await getDownloadURL(storageRef);
+      setAboutMe((prev) => {
+        const updatedSkills = [...prev.skills];
+        updatedSkills[index].featureimage = url;
+        return { ...prev, skills: updatedSkills };
+      });
+    } catch (error) {
+      setError("Error uploading feature image: " + error.message);
+      console.error("Error uploading feature image: ", error);
     } finally {
       setImageUploadLoading(false);
     }
@@ -127,6 +150,19 @@ const SkillsSection = () => {
               rows="4"
               cols="50"
             />
+            <div className="skill-feature-image">
+              <label>Feature Image (IconImage):</label>
+              {skill.featureimage && (
+                <div>
+                  <img src={skill.featureimage} alt={`Feature for ${skill.skill}`} width="100" />
+                </div>
+              )}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleAddFeatureImage(index, e)}
+              />
+            </div>
             <div className="skill-images">
               {skill.images.map((image, imageIndex) => (
                 <div key={imageIndex} className="skill-image">
