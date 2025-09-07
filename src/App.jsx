@@ -43,6 +43,7 @@ function App() {
 function MainSite() {
   const [currentSection, setCurrentSection] = useState('hero');
   const [loading, setLoading] = useState(true);
+  const [loaderVisible, setLoaderVisible] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState({
     contactInfo: { email: "", phone: "", address: "" },
@@ -63,13 +64,16 @@ function MainSite() {
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const [contactInfo, introduction, skills, portfolio, categories] = await Promise.all([
+        const dataPromises = Promise.all([
           fetchContactInfo(),
           fetchIntroduction(),
           fetchSkills(),
           fetchPortfolio(),
           fetchCategories()
         ]);
+        const timeoutPromise = new Promise(resolve => setTimeout(resolve, 3000));
+        const [dataResults] = await Promise.all([dataPromises, timeoutPromise]);
+        const [contactInfo, introduction, skills, portfolio, categories] = dataResults;
         setData({ contactInfo, introduction, skills, portfolio, categories });
       } catch (err) {
         setError("Failed to load data. Please try again.");
@@ -81,6 +85,15 @@ function MainSite() {
 
     fetchAllData();
   }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      const timer = setTimeout(() => {
+        setLoaderVisible(false);
+      }, 1000); // 1 second for fade-out animation
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
 
   useEffect(() => {
     const sectionIds = ['hero', 'about', 'service', 'features', 'webdevshowcase', 'workdetails', 'collaborationsection'];
@@ -101,11 +114,11 @@ function MainSite() {
     return () => observer.disconnect();
   }, []);
 
-  if (loading) return <Loader />;
+  if (loaderVisible) return <Loader fadeOut={!loading} />;
   if (error) return <div className="error-message">{error}</div>;
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className={`min-h-screen overflow-x-hidden ${!loading ? 'fade-in' : ''}`}>
       {/* Navigation Indicator */}
       <div className="fixed right-2 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 z-50 opacity-50">
         {['hero', 'about', 'service', 'features', 'webdevshowcase', 'workdetails', 'collaborationsection'].map((sectionId) => (
