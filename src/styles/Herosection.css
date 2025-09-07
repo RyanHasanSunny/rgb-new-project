@@ -6,6 +6,8 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
+  background: radial-gradient(circle at center, rgba(1, 22, 20, 0.3) 0%, transparent 70%);
+  animation: pulseGlow 3s ease-in-out infinite;
 }
 
 /* Email styles */
@@ -176,6 +178,15 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 120% 120%;
   }
 }
 

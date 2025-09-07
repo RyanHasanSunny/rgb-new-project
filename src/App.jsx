@@ -5,6 +5,7 @@ import Herosection from './components/Sections/Herosection';
 import Aboutsection from './components/Sections/Aboutsection';
 import Servicesection from './components/Sections/Servicesection';
 import FeatureSection from './components/Sections/Featuresection';
+import WebDevShowcase from './components/Sections/WebDevShowcase';
 import Workdetails from './components/Sections/Workdetails';
 import Collaboration from './components/Sections/Collaboration';
 import Footer from './components/Sections/Footer';
@@ -48,7 +49,7 @@ function MainSite() {
   };
 
   useEffect(() => {
-    const sectionIds = ['hero', 'about', 'service', 'features', 'workdetails', 'collaborationsection'];
+    const sectionIds = ['hero', 'about', 'service', 'features', 'webdevshowcase', 'workdetails', 'collaborationsection'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -70,7 +71,7 @@ function MainSite() {
     <div className="min-h-screen overflow-x-hidden">
       {/* Navigation Indicator */}
       <div className="fixed right-2 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 z-50 opacity-50">
-        {['hero', 'about', 'service', 'features', 'workdetails', 'collaborationsection'].map((sectionId) => (
+        {['hero', 'about', 'service', 'features', 'webdevshowcase', 'workdetails', 'collaborationsection'].map((sectionId) => (
           <button
             key={sectionId}
             onClick={() => scrollToSection(sectionId)}
@@ -86,7 +87,8 @@ function MainSite() {
       <section id="hero"><Herosection onScrollToAbout={() => scrollToSection('about')} /></section>
       <section id="about"><Aboutsection onScrollToHero={() => scrollToSection('service')} /></section>
       <section id="service"><Servicesection onScrollToHero={() => scrollToSection('features')} /></section>
-      <section id="features"><FeatureSection onScrollToHero={() => scrollToSection('hero')} /></section>
+      <section id="features"><FeatureSection onScrollToHero={() => scrollToSection('webdevshowcase')} /></section>
+      <section id="webdevshowcase"><WebDevShowcase /></section>
       <section id="workdetails"><Workdetails onScrollToHero={() => scrollToSection('hero')} /></section>
       <section id="collaborationsection"><Collaboration onScrollToHero={() => scrollToSection('hero')} /></section>
 
