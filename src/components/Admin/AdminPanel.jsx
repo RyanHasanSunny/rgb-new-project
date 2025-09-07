@@ -79,48 +79,46 @@ const AdminPanel = ({ setIsAuthenticated }) => {
 
   return (
     <section className="admin-panel">
-        <div className="admin-header">
+      <div className="sidebar">
         <h1>Admin Panel</h1>
-          <ul>
-            <li><button className="nav-link" onClick={() => scrollToSection('intro')}>Introduction</button></li>
-            <li><button className="nav-link" onClick={() => scrollToSection('about')}>About Me</button></li>
-            <li><button className="nav-link" onClick={() => scrollToSection('skills')}>Skills</button></li>
-            <li><button className="nav-link" onClick={() => scrollToSection('experience')}>Experience</button></li>
-            <li><button className="nav-link" onClick={() => scrollToSection('edu')}>Education</button></li>
-            <li><button className="nav-link" onClick={() => scrollToSection('contact')}>Contact Info</button></li>
-            <li><button className="nav-link" onClick={() => scrollToSection('portfolio')}>Portfolio</button></li>
-          </ul>
-          {/* Logout and Back to Home Buttons */}
+        <ul>
+          <li><button className="nav-link" onClick={() => scrollToSection('intro')}><span className="icon">🏠</span> Introduction</button></li>
+          <li><button className="nav-link" onClick={() => scrollToSection('about')}><span className="icon">👤</span> About Me</button></li>
+          <li><button className="nav-link" onClick={() => scrollToSection('skills')}><span className="icon">🛠️</span> Skills</button></li>
+          <li><button className="nav-link" onClick={() => scrollToSection('experience')}><span className="icon">💼</span> Experience</button></li>
+          <li><button className="nav-link" onClick={() => scrollToSection('edu')}><span className="icon">🎓</span> Education</button></li>
+          <li><button className="nav-link" onClick={() => scrollToSection('contact')}><span className="icon">📞</span> Contact Info</button></li>
+          <li><button className="nav-link" onClick={() => scrollToSection('portfolio')}><span className="icon">📁</span> Portfolio</button></li>
+        </ul>
         <div className='admin-buttons'>
           <button className="button" onClick={handleLogout}>Logout</button>
           <button className="button" onClick={() => navigate("/")}>Back to Home</button>
         </div>
+      </div>
+      <div className="main-content">
+        <div id='sections'>
+          <div ref={sectionRefs.intro}>
+            <IntroductionSection />
+          </div>
+          <div ref={sectionRefs.about}>
+            <AboutMeSection />
+          </div>
+          <div ref={sectionRefs.skills}>
+            <SkillsSection />
+          </div>
+          <div ref={sectionRefs.experience}>
+            <ExperienceSection />
+          </div>
+          <div ref={sectionRefs.edu}>
+            <EduSection />
+          </div>
+          <div ref={sectionRefs.contact}>
+            <ContactInfoSection />
+          </div>
+          <div ref={sectionRefs.portfolio}>
+            <PortfolioSection />
+          </div>
         </div>
-
-
-<div id='sections'>
-      {/* Sections */}
-      <div ref={sectionRefs.intro}>
-        <IntroductionSection />
-      </div>
-      <div ref={sectionRefs.about}>
-        <AboutMeSection />
-      </div>
-      <div ref={sectionRefs.skills}>
-        <SkillsSection />
-      </div>
-      <div ref={sectionRefs.experience}>
-        <ExperienceSection />
-      </div>
-      <div ref={sectionRefs.edu}>
-        <EduSection />
-      </div>
-      <div ref={sectionRefs.contact}>
-        <ContactInfoSection />
-      </div>
-      <div ref={sectionRefs.portfolio}>
-        <PortfolioSection />
-      </div>
       </div>
     </section>
   );

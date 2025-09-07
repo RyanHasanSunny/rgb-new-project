@@ -1,58 +1,53 @@
 import React, { useEffect, useState } from 'react';
 
-import { db, storage } from '../../firebaseConfig';
-import { collection,  updateDoc,  getDocs, doc } from 'firebase/firestore';
-
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-
+import { db } from '../../firebaseConfig';
+import { collection, updateDoc, getDocs, doc, setDoc } from 'firebase/firestore';
+import { fetchIntroduction } from '../../api';
 import '../../styles/AdminPanel.css';
 
 const IntroductionSection = () => {
 
-  // Introduction state
-  const [welcomeText, setWelcomeText] = useState("WELCOME TO");
-  const [name, setName] = useState("RYAN");
-  const [subtitle, setSubtitle] = useState("Graphic Boy.");
-  const [imageUrl, setImageUrl] = useState("");
+  const [introductionInfo, setIntroductionInfo] = useState({
+    name: "",
+    linkedin: "",
+    facebook: "",
+    instagram: "",
+    artstation: ""
+  });
 
 
 
 
-  
+
+
+
+
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [imageUploadLoading, setImageUploadLoading] = useState(false);
 
   // Fetch all data from Firestore
   useEffect(() => {
-  const fetchData = async () => {
-    try {
-    
-      // Fetch Introduction
-      const introSnapshot = await getDocs(collection(db, "introduction"));
-      if (!introSnapshot.empty) {
-        const introData = introSnapshot.docs[0].data();
-        setWelcomeText(introData.welcomeText);
-        setName(introData.name);
-        setSubtitle(introData.subtitle);
-        setImageUrl(introData.image);
+    const fetchData = async () => {
+      try {
+        const data = await fetchIntroduction();
+        setIntroductionInfo(data);
+      } catch (error) {
+        setError("Error fetching data: " + error.message);
+        console.error("Error fetching data: ", error);
+      } finally {
+        setLoading(false);
       }
+    };
 
-    } catch (error) {
-      setError("Error fetching data: " + error.message);
-      console.error("Error fetching data: ", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  fetchData();
-}, []);
+    fetchData();
+  }, []);
 
 
-  
- 
+
+
+
+
 
 
 
@@ -63,38 +58,33 @@ const IntroductionSection = () => {
 
 
   // Save introduction data
-  const handleSaveIntroduction = async () => {
-    try {
-      const introData = { welcomeText, name, subtitle, image: imageUrl };
-      const docRef = doc(db, "introductionDocId", "BXORMSgnVvlVBbczIC7J"); // Replace with your document ID
-      await updateDoc(docRef, introData);
-      alert("Introduction saved successfully!");
-    } catch (error) {
-      setError("Error updating introduction: " + error.message);
-      console.error("Error updating introduction: ", error);
-    }
-  };
+  // const handleSaveIntroduction = async () => {
+  //   try {
+  //     const introData = { name, linkedin, facebook, instagram, artstation };
+  //     const docRef = doc(db, "introductionDocId", "BXORMSgnVvlVBbczIC7J"); // Replace with your document ID
+  //     await updateDoc(docRef, introData);
+  //     alert("Introduction saved successfully!");
+  //   } catch (error) {
+  //     setError("Error updating introduction: " + error.message);
+  //     console.error("Error updating introduction: ", error);
+  //   }
+  // };
 
-  // Handle image upload
-  const handleImageUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
 
-    setImageUploadLoading(true);
-    const storageRef = ref(storage, `images/${file.name}`);
-    try {
-      await uploadBytes(storageRef, file);
-      const url = await getDownloadURL(storageRef);
-      setImageUrl(url);
-    } catch (error) {
-      setError("Error uploading image: " + error.message);
-      console.error("Error uploading image: ", error);
-    } finally {
-      setImageUploadLoading(false);
-    }
-  };
+    const handleSaveIntroduction = async () => {
+      try {
+        const docRef = doc(db, "introductionDocId", "BXORMSgnVvlVBbczIC7J"); // Replace with your document ID
+        await setDoc(docRef, introductionInfo);
+        alert("introduction information saved successfully!");
+      } catch (error) {
+        setError("Error saving introduction information: " + error.message);
+        console.error("Error saving introduction information: ", error);
+      }
+    };
 
-  
+
+
+
 
 
   if (loading) return <div className="loading-spinner">Loading...</div>;
@@ -102,15 +92,26 @@ const IntroductionSection = () => {
 
   return (
 
-      <section className="admin-sections">
-        <h2>Edit Introduction</h2>
-        <div className="content">
-          <input type="text" value={welcomeText} onChange={(e) => setWelcomeText(e.target.value)} placeholder="Welcome Text" />
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
-          <input type="text" value={subtitle} onChange={(e) => setSubtitle(e.target.value)} placeholder="Subtitle" />
-          <input type="file" accept="image/*" onChange={handleImageUpload} />
-          {imageUploadLoading ? <p>Uploading...</p> : <button className="button" onClick={handleSaveIntroduction}>Save Introduction</button>}
-        </div>
+    <section className="admin-sections">
+      <h2>Edit Introduction</h2>
+      <div className="content">
+        <label>Name</label>
+        <input type="text"
+          value={introductionInfo.name}
+          onChange={(e) => setIntroductionInfo({ ...introductionInfo, name: e.target.value })}
+          placeholder="Name"
+        />
+
+        <label>LinkedIn</label>
+        <input type="text" value={introductionInfo.linkedin} onChange={(e) => setIntroductionInfo({ ...introductionInfo, linkedin: e.target.value })} />
+        <label>Facebook</label>
+        <input type="text" value={introductionInfo.facebook} onChange={(e) => setIntroductionInfo({ ...introductionInfo, facebook: e.target.value })} />
+        <label>Instagram</label>
+        <input type="text" value={introductionInfo.instagram} onChange={(e) => setIntroductionInfo({ ...introductionInfo, instagram: e.target.value })} />
+        <label>ArtStation</label>
+        <input type="text" value={introductionInfo.artstation} onChange={(e) => setIntroductionInfo({ ...introductionInfo, artstation: e.target.value })} />
+        <button className="button" onClick={handleSaveIntroduction}>Save Introduction</button>
+      </div>
     </section>
   );
 };

@@ -1,5 +1,5 @@
-# TODO: Ensure IconImage Upload in Admin for Servicesection
+# TODO for Introduction Section API Integration
 
-- [x] Update src/components/Admin/SkillsSection.jsx: Add featureimage field to skill object and upload functionality
-- [x] Update src/components/Admin/SkillsSection.jsx: Modify handleSave to include featureimage in Firestore
-- [x] Test featureimage upload and verify display in Servicesection
+- [x] Add updateIntroduction function to src/api.jsx
+- [x] Modify src/components/Admin/IntroductionSection.jsx to use fetchIntroduction and updateIntroduction from api.jsx
+- [x] Test the changes to ensure data fetches and saves correctly

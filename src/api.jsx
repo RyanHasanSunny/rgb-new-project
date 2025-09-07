@@ -25,4 +25,32 @@ export const fetchSkills = async () => {
   }
 };
 
+export const fetchContactInfo = async () => {
+  try {
+    const contactDoc = await getDocs(collection(db, "contact"));
+    if (!contactDoc.empty) {
+      const contactData = contactDoc.docs[0].data();
+      return contactData;
+    }
+    return { email: "", phone: "", address: "" };
+  } catch (error) {
+    console.error("Error fetching contact info: ", error);
+    return { email: "", phone: "", address: "" };
+  }
+};
+
+export const fetchIntroduction = async () => {
+  try {
+    const introDoc = await getDocs(collection(db, "introductionDocId"));
+    if (!introDoc.empty) {
+      const introData = introDoc.docs[0].data();
+      return introData;
+    }
+    return { name: "", linkedin: "", facebook: "", instagram: "", artstation: "" };
+  } catch (error) {
+    console.error("Error fetching introduction: ", error);
+    return { name: "", linkedin: "", facebook: "", instagram: "", artstation: "" };
+  }
+};
+
 

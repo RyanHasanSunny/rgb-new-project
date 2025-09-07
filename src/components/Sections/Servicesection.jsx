@@ -25,7 +25,7 @@ export default function Servicesection() {
           title={skill.skill}
           description={skill.details}
           Icon={skill.featureimage } // Default to webdev if no feature image
-          iconList={skill.images ? skill.images.slice(1) : []}
+          iconList={skill.images ? skill.images.slice(0) : []}
         />
       ))}
 

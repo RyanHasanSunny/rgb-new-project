@@ -181,6 +181,7 @@ const EduSection = () => {
 
                     <div>
                         <h3>{editingEducation ? 'Edit Education' : 'Add New Education'}</h3>
+                        <label>Qualification</label>
                         <input
                             type="text"
                             value={editingEducation ? editingEducation.qualification : newEducation.qualification}
@@ -191,6 +192,7 @@ const EduSection = () => {
                             }
                             placeholder="Qualification"
                         />
+                        <label>Session</label>
                         <input
                             type="text"
                             value={editingEducation ? editingEducation.session : newEducation.session}
@@ -201,6 +203,7 @@ const EduSection = () => {
                             }
                             placeholder="Session"
                         />
+                        <label>Institution</label>
                         <input
                             type="text"
                             value={editingEducation ? editingEducation.institution : newEducation.institution}

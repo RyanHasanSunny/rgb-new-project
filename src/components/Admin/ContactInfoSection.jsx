@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
+import { fetchContactInfo } from '../../api';
 import '../../styles/AdminPanel.css';
 
 
@@ -21,8 +22,8 @@ const ContactInfoSection = ({ setIsAuthenticated }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-       
-        
+        const data = await fetchContactInfo();
+        setContactInfo(data);
       } catch (error) {
         setError("Error fetching data: " + error.message);
         console.error("Error fetching data: ", error);
@@ -56,18 +57,21 @@ const ContactInfoSection = ({ setIsAuthenticated }) => {
         <div className="content">
           <h2>Manage Contact Information</h2>
           <div>
+            <label>Email</label>
             <input
               type="email"
               value={contactInfo.email}
               onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
               placeholder="Email"
             />
+            <label>Phone</label>
             <input
               type="tel"
               value={contactInfo.phone}
               onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
               placeholder="Phone"
             />
+            <label>Address</label>
             <input
               type="text"
               value={contactInfo.address}

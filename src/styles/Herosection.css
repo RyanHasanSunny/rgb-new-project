@@ -23,12 +23,14 @@
 }
 
 .social-icon {
+ 
   color: white;
   transition: color 0.3s;
 }
 
 .social-icon:hover {
   color: #00aced; /* Change color on hover if desired */
+  transform: scale(1.02);
 }
 
 
@@ -48,13 +50,11 @@
   position: absolute;
   display: flex;
   gap: 1rem;
-  transition: transform 0.3s ease;
+ 
   
 }
 
-.hero-content:hover {
-  transform: scale(1.02);
-}
+
 
 .hero-title {
   font-size: 8rem;
@@ -65,10 +65,12 @@
   font-weight: 600;
   letter-spacing: 0.5rem;
   transition: text-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .hero-title:hover {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: scale(1.02);
 }
 
 .Dot {

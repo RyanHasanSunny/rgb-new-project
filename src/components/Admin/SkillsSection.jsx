@@ -97,6 +97,8 @@ const SkillsSection = () => {
     }
   };
 
+
+
   // Delete an image from a skill
   const handleDeleteImageFromSkill = (skillIndex, imageIndex) => {
     setAboutMe((prev) => {
@@ -137,12 +139,14 @@ const SkillsSection = () => {
         <h3>Skills</h3>
         {aboutMe.skills.map((skill, index) => (
           <div key={index} className="skill-item">
+            <label>Skill Name</label>
             <input
               type="text"
               value={skill.skill}
               onChange={(e) => handleSkillChange(index, "skill", e.target.value)}
               placeholder="Skill Name"
             />
+            <label>Skill Details</label>
             <textarea
               value={skill.details}
               onChange={(e) => handleSkillChange(index, "details", e.target.value)}
@@ -150,20 +154,26 @@ const SkillsSection = () => {
               rows="4"
               cols="50"
             />
+
             <div className="skill-feature-image">
-              <label>Feature Image (IconImage):</label>
+              <label>Feature Image (IconImage)</label>
               {skill.featureimage && (
-                <div>
+                <div className="feature-image-container">
                   <img src={skill.featureimage} alt={`Feature for ${skill.skill}`} width="100" />
+                  <div className="image-actions">
+                    <button className="button" onClick={() => handleSkillChange(index, "featureimage", "")}>Delete</button>
+                  </div>
                 </div>
               )}
               <input
                 type="file"
-                accept="image/*"
+                accept=".png,.jpg,.jpeg,.svg,.gif,.webp,image/*"
                 onChange={(e) => handleAddFeatureImage(index, e)}
               />
             </div>
+
             <div className="skill-images">
+              <label>Skill Images</label>
               {skill.images.map((image, imageIndex) => (
                 <div key={imageIndex} className="skill-image">
                   <img src={image} alt={`Skill ${index}  ${imageIndex}`} width="100" />
@@ -172,7 +182,7 @@ const SkillsSection = () => {
               ))}
               <input
                 type="file"
-                accept="image/*"
+                accept=".png,.jpg,.jpeg,.svg,.gif,.webp,image/*"
                 onChange={(e) => handleAddImageToSkill(index, e)}
               />
               {imageUploadLoading && <p>Uploading...</p>}

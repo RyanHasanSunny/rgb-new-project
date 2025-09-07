@@ -78,36 +78,42 @@ const handleSaveAboutMe = async () => {
       <section className="admin-sections">
         <h2>Edit About Me</h2>
         <div className="content">
+          <label>Name</label>
           <input
             type="text"
             value={aboutMe.name}
             onChange={(e) => setAboutMe({ ...aboutMe, name: e.target.value })}
             placeholder="Name"
           />
+          <label>Years of Experience</label>
           <input
             type="text"
             value={aboutMe.experience}
             onChange={(e) => setAboutMe({ ...aboutMe, experience: e.target.value })}
             placeholder="Years of Experience"
           />
+          <label>Projects Completed</label>
           <input
             type="text"
             value={aboutMe.projects}
             onChange={(e) => setAboutMe({ ...aboutMe, projects: e.target.value })}
             placeholder="Projects Completed"
           />
+          <label>Clients</label>
           <input
             type="text"
             value={aboutMe.clients}
             onChange={(e) => setAboutMe({ ...aboutMe, clients: e.target.value })}
             placeholder="Clients"
           />
+          <label>Hours of Designing</label>
           <input
             type="text"
             value={aboutMe.hours}
             onChange={(e) => setAboutMe({ ...aboutMe, hours: e.target.value })}
             placeholder="Hours of Designing"
           />
+          <label>About Me Description</label>
           <textarea
             value={aboutMe.description}
             onChange={(e) => setAboutMe({ ...aboutMe, description: e.target.value })}

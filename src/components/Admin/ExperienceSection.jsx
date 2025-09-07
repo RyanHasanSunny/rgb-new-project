@@ -168,6 +168,7 @@ const ExperienceSection = () => {
 
                         <div>
                             <h3>{editingExperience ? 'Edit Experience' : 'Add New Experience'}</h3>
+                            <label>Title</label>
                             <input
                                 type="text"
                                 value={editingExperience ? editingExperience.title : newExperience.title}
@@ -178,6 +179,7 @@ const ExperienceSection = () => {
                                 }
                                 placeholder="Title"
                             />
+                            <label>Duration</label>
                             <input
                                 type="text"
                                 value={editingExperience ? editingExperience.duration : newExperience.duration}
@@ -188,6 +190,7 @@ const ExperienceSection = () => {
                                 }
                                 placeholder="Duration"
                             />
+                            <label>Organization</label>
                             <input
                                 type="text"
                                 value={editingExperience ? editingExperience.organization : newExperience.organization}
@@ -202,7 +205,7 @@ const ExperienceSection = () => {
                                 className="button"
                                 onClick={editingExperience ? handleSaveExperience : handleAddExperience}
                             >
-                                {editingExperience ? 'Save Changes' : 'Add Education'}
+                                {editingExperience ? 'Save Changes' : 'Add Experience'}
                             </button>
                             {editingExperience && (
                                 <button className="button" onClick={() => setEditingExperience(null)}>Cancel</button>

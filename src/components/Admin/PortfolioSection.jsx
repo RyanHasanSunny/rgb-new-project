@@ -190,14 +190,18 @@ const PortfolioSection = () => {
         {/* Add/Edit Portfolio Item Form */}
         <div>
           <h3>{editingPortfolioItem ? 'Edit Portfolio Item' : 'Add New Portfolio Item'}</h3>
+          <label>Title</label>
           <input type="text" value={newPortfolioItem.title} onChange={(e) => setNewPortfolioItem({ ...newPortfolioItem, title: e.target.value })} placeholder="Portfolio Item Title" />
+          <label>Description</label>
           <input type="text" value={newPortfolioItem.description} onChange={(e) => setNewPortfolioItem({ ...newPortfolioItem, description: e.target.value })} placeholder="Portfolio Item Description" />
+          <label>Link</label>
           <input type="text" value={newPortfolioItem.link} onChange={(e) => setNewPortfolioItem({ ...newPortfolioItem, link: e.target.value })} placeholder="Portfolio Link" />
-          <input type="file" accept="image/*" onChange={handlePortfolioImageUpload} />
+          <label>Image</label>
+          <input type="file" accept=".png,.jpg,.jpeg,.svg,.gif,.webp,image/*" onChange={handlePortfolioImageUpload} />
 
           {/* Category Selection Dropdown */}
           <div>
-            <h4>Select Category:</h4>
+            <label>Select Category</label>
             <select
               value={newPortfolioItem.category}
               onChange={(e) => setNewPortfolioItem({ ...newPortfolioItem, category: e.target.value })}
@@ -213,14 +217,14 @@ const PortfolioSection = () => {
 
           {/* Add New Category */}
           <div>
-            <h4>Add New Category:</h4>
+            <label>Add New Category</label>
             <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)} placeholder="New Category Name" />
             <button className="button" onClick={handleAddCategory}>Add Category</button>
           </div>
 
           {/* Edit/Delete Category */}
           <div>
-            <h4>Edit/Delete Category:</h4>
+            <label>Edit/Delete Category</label>
             <select
               value={editingCategory ? editingCategory.id : ''}
               onChange={(e) => {
@@ -237,6 +241,7 @@ const PortfolioSection = () => {
             </select>
             {editingCategory && (
               <div>
+                <label>Category Name</label>
                 <input
                   type="text"
                   value={editingCategory.name}
