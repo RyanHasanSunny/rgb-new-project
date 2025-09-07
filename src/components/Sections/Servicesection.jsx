@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import "../../styles/Aboutsection.css";
 import SectionContainer from '../Container/Section_Container/Section_Container';
 import ServiceContainer from '../Container/Services/ServiceContainer';
-import { fetchSkills } from '../../api';
 import webdev from '../../assets/webdev.svg';
 
-export default function Servicesection() {
-  const [skills, setSkills] = useState([]);
-
-  useEffect(() => {
-    const loadSkills = async () => {
-      const fetchedSkills = await fetchSkills();
-      setSkills(fetchedSkills);
-    };
-    loadSkills();
-  }, []);
+export default function Servicesection({ skills, onScrollToHero }) {
 
   return (
     <SectionContainer id="servicesection">

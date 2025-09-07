@@ -53,4 +53,30 @@ export const fetchIntroduction = async () => {
   }
 };
 
+export const fetchPortfolio = async () => {
+  try {
+    const portfolioSnapshot = await getDocs(collection(db, "portfolio"));
+    return portfolioSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+  } catch (error) {
+    console.error("Error fetching portfolio: ", error);
+    return [];
+  }
+};
+
+export const fetchCategories = async () => {
+  try {
+    const categoriesSnapshot = await getDocs(collection(db, "categories"));
+    return categoriesSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+  } catch (error) {
+    console.error("Error fetching categories: ", error);
+    return [];
+  }
+};
+
 

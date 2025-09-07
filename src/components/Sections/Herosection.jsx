@@ -1,22 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { fetchContactInfo, fetchIntroduction } from "../../api";
+import React from "react";
 import "../../styles/Herosection.css";
 import { FaLinkedin, FaFacebook, FaInstagram, FaArtstation } from "react-icons/fa";
 
-const Herosection = () => {
-  const [contactInfo, setContactInfo] = useState({ email: "" });
-  const [introduction, setIntroduction] = useState({ name: "", linkedin: "", facebook: "", instagram: "", artstation: "" });
-
-  useEffect(() => {
-    const loadData = async () => {
-      const contactData = await fetchContactInfo();
-      setContactInfo(contactData);
-
-      const introData = await fetchIntroduction();
-      setIntroduction(introData);
-    };
-    loadData();
-  }, []);
+const Herosection = ({ contactInfo, introduction, onScrollToAbout }) => {
 
   return (
     <section id="hero" className="section">

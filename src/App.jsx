@@ -11,6 +11,9 @@ import Collaboration from './components/Sections/Collaboration';
 import Footer from './components/Sections/Footer';
 import AdminLogin from './components/Admin/AdminLogin';
 import AdminPanel from './components/Admin/AdminPanel';
+import Loader from './components/Loader';
+import { fetchContactInfo, fetchIntroduction, fetchSkills, fetchPortfolio, fetchCategories } from './api';
+import './styles/Loader.css';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -39,6 +42,15 @@ function App() {
 // Main site content extracted into a component
 function MainSite() {
   const [currentSection, setCurrentSection] = useState('hero');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [data, setData] = useState({
+    contactInfo: { email: "", phone: "", address: "" },
+    introduction: { name: "", linkedin: "", facebook: "", instagram: "", artstation: "" },
+    skills: [],
+    portfolio: [],
+    categories: []
+  });
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -47,6 +59,28 @@ function MainSite() {
       setCurrentSection(sectionId);
     }
   };
+
+  useEffect(() => {
+    const fetchAllData = async () => {
+      try {
+        const [contactInfo, introduction, skills, portfolio, categories] = await Promise.all([
+          fetchContactInfo(),
+          fetchIntroduction(),
+          fetchSkills(),
+          fetchPortfolio(),
+          fetchCategories()
+        ]);
+        setData({ contactInfo, introduction, skills, portfolio, categories });
+      } catch (err) {
+        setError("Failed to load data. Please try again.");
+        console.error("Error fetching data:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAllData();
+  }, []);
 
   useEffect(() => {
     const sectionIds = ['hero', 'about', 'service', 'features', 'webdevshowcase', 'workdetails', 'collaborationsection'];
@@ -67,6 +101,9 @@ function MainSite() {
     return () => observer.disconnect();
   }, []);
 
+  if (loading) return <Loader />;
+  if (error) return <div className="error-message">{error}</div>;
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Navigation Indicator */}
@@ -84,10 +121,10 @@ function MainSite() {
         ))}
       </div>
 
-      <section id="hero"><Herosection onScrollToAbout={() => scrollToSection('about')} /></section>
+      <section id="hero"><Herosection contactInfo={data.contactInfo} introduction={data.introduction} onScrollToAbout={() => scrollToSection('about')} /></section>
       <section id="about"><Aboutsection onScrollToHero={() => scrollToSection('service')} /></section>
-      <section id="service"><Servicesection onScrollToHero={() => scrollToSection('features')} /></section>
-      <section id="features"><FeatureSection onScrollToHero={() => scrollToSection('webdevshowcase')} /></section>
+      <section id="service"><Servicesection skills={data.skills} onScrollToHero={() => scrollToSection('features')} /></section>
+      <section id="features"><FeatureSection portfolio={data.portfolio} categories={data.categories} onScrollToHero={() => scrollToSection('webdevshowcase')} /></section>
       <section id="webdevshowcase"><WebDevShowcase /></section>
       <section id="workdetails"><Workdetails onScrollToHero={() => scrollToSection('hero')} /></section>
       <section id="collaborationsection"><Collaboration onScrollToHero={() => scrollToSection('hero')} /></section>
