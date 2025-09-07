@@ -9,7 +9,7 @@ export default function SectionContainer({ id, title, children }) {
   return (
     <div
       id={id}
-      className="section-container flex flex-col justify-center"
+      className=" flex flex-col justify-center items-center  min-w-screen"
       style={{ paddingInline: '5%', paddingBottom: '5%' }}
     >
       {/* Conditional Sticky Header */}

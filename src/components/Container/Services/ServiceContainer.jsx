@@ -11,7 +11,7 @@ const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
   return (
     <div
       ref={ref}
-      className="w-full min-h-screen flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-25 md:space-y-25"
+      className="w-full min-h-screen flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-10 md:space-y-20"
     >
       {/* Left Section */}
       <motion.div
@@ -24,7 +24,7 @@ const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
         <img
           src={Icon}
           alt={title}
-          className="w-full h-100 md:w-full md:h-100 object-contain"
+          className="w-64 lg:w-80 h-auto md:w-full md:h-auto object-contain"
           style={{ filter: "drop-shadow(0 0 10px rgba(0, 255, 255, 0.34))" }}
         />
       </motion.div>
@@ -40,7 +40,7 @@ const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
           {title}
         </h2>
 
-        <div className="divider my-4 h-1 w-16 bg-cyan-500 mx-auto md:mx-0"></div>
+        <div className="divider my-4 h-1 w-full bg-cyan-500 mx-auto md:mx-0"></div>
 
         <p className="text-gray-300 leading-relaxed max-w-md md:max-w-lg">
           {description}

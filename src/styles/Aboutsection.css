@@ -239,7 +239,7 @@ h1 {
   .main-content {
     padding-right: 2rem;
     padding-left: 1.5rem;
-    align-items: center;
+   
   }
   
   .content-wrapper {
@@ -322,8 +322,8 @@ h1 {
   }
   
   .divider {
-    margin: 0 auto 1.25rem auto;
-    width: 2.5rem;
+    margin: 0 auto 3.25rem auto;
+    
   }
   
   .main-title {
@@ -392,7 +392,7 @@ h1 {
 
   .divider {
     margin: 0 auto 1rem auto;
-    width: 2rem;
+   
   }
   
   .main-title {
