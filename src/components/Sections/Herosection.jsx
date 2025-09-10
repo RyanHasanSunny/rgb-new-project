@@ -9,7 +9,7 @@ const Herosection = ({ contactInfo, introduction, onScrollToAbout }) => {
 
       {/* Centered Content */}
       <div className="hero-content">
-        <div className="flex flex-col items-center  justify-center h-full">
+        <div className="flex flex-col items-center gap-8  justify-center h-full">
         <h1 className="hero-title">{introduction.name || "" }</h1>
         <div className="social-media-icons  text-white">
           {introduction.linkedin && (
