@@ -49,8 +49,8 @@ h1 {
 }
 
 .welcome {
-  font-size: 24px;
-  margin-bottom: 1rem;
+  font-size: 44px;
+  margin-bottom: 20px;
 }
 
 .subtitle {
@@ -225,7 +225,7 @@ h1 {
     bottom: 1.5rem;
   }
   .welcome {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 
@@ -273,7 +273,7 @@ h1 {
   }
 
   .welcome {
-    font-size: 18px;
+    font-size: 24px;
   }
   
   .bottom-nav {

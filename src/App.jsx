@@ -71,7 +71,7 @@ function MainSite() {
           fetchPortfolio(),
           fetchCategories()
         ]);
-        const timeoutPromise = new Promise(resolve => setTimeout(resolve, 3000));
+        const timeoutPromise = new Promise(resolve => setTimeout(resolve, 100));
         const [dataResults] = await Promise.all([dataPromises, timeoutPromise]);
         const [contactInfo, introduction, skills, portfolio, categories] = dataResults;
         setData({ contactInfo, introduction, skills, portfolio, categories });

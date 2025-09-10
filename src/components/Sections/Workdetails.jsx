@@ -74,7 +74,7 @@ const Workingdetails = () => {
             >
               {/* Experience */}
               <div className="Experience text-white p-5 shadow-md hover:shadow-xl transition duration-300 text-center">
-                <h2 className="text-xl font-semibold text-gray-400 uppercase tracking-wide break-words">
+                <h2 className="text-xl font-semibold text-gray-400 uppercase tracking-wide ">
                   Year of Experience
                 </h2>
                 <p className="text-4xl font-bold mt-2 break-words" style={{ color: "rgba(182, 182, 182, 0.92)" }}>
@@ -86,7 +86,7 @@ const Workingdetails = () => {
 
               {/* Projects */}
               <div className="Project-Completed text-white p-5 shadow-md hover:shadow-xl transition duration-300 text-center">
-                <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide break-words">
+                <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
                   Project Completed
                 </h2>
                 <p className="text-4xl font-bold mt-2 break-words" style={{ color: "rgba(182, 182, 182, 0.92)" }}>
@@ -98,7 +98,7 @@ const Workingdetails = () => {
 
               {/* Clients */}
               <div className="Clients text-white p-5 shadow-md hover:shadow-xl transition duration-300 text-center">
-                <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide break-words">
+                <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wide ">
                   Clients
                 </h2>
                 <p className="text-4xl font-bold mt-2 break-words" style={{ color: "rgba(182, 182, 182, 0.92)" }}>
@@ -110,7 +110,7 @@ const Workingdetails = () => {
 
               {/* Hours */}
               <div className="Hours text-white p-5 shadow-md hover:shadow-xl transition duration-300 text-center">
-                <h2 className="text-center font-semibold text-gray-400 uppercase tracking-wide break-words">
+                <h2 className="text-center font-semibold text-gray-400 uppercase tracking-wide ">
                   Hours of Designing
                 </h2>
                 <p

@@ -1,5 +1,5 @@
 import React from 'react';
-import Ryan from '../assets/RyanGraphicBoy.svg';
+import Ryan from '../assets/Fab.svg';
 import '../styles/Loader.css';
 
 const Loader = ({ fadeOut }) => {

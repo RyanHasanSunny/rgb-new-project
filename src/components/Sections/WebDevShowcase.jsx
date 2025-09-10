@@ -74,7 +74,7 @@ const WebDevShowcase = () => {
   const tripleProjects = [...projects, ...projects, ...projects];
 
   return (
-    <SectionContainer id="featuresection" title="Web Development Showcase">
+    <SectionContainer id="featuresection" title="Web Development Projects">
       <div className="webdev-showcase">
         <div className="showcase-container">
           <div className="showcase-scroll">
