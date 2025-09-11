@@ -11,7 +11,7 @@ const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
   return (
     <div
       ref={ref}
-      className="w-full min-h-screen flex flex-col md:flex-row justify-center items-center md:space-x-20 space-y-10 md:space-y-20"
+      className="w-full flex flex-col md:flex-row justify-center items-center md:py-40 py-20  md:space-x-20 space-y-10 md:space-y-20"
     >
       {/* Left Section */}
       <motion.div

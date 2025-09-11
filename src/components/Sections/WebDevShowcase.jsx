@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionContainer from '../Container/Section_Container/Section_Container';
 import '../../styles/WebDevShowcase.css';
+import { div } from 'framer-motion/client';
 
 const WebDevShowcase = () => {
   const projects = [
@@ -74,6 +75,7 @@ const WebDevShowcase = () => {
   const tripleProjects = [...projects, ...projects, ...projects];
 
   return (
+    <div className="mt-20">
     <SectionContainer id="featuresection" title="Web Development Projects">
       <div className="webdev-showcase">
         <div className="showcase-container">
@@ -101,6 +103,7 @@ const WebDevShowcase = () => {
         </div>
       </div>
     </SectionContainer>
+    </div>
   );
 };
 
