@@ -149,9 +149,8 @@ function MainSite() {
 
   return (
     <div id="smooth-wrapper" style={{ overflow: 'hidden' }} ref={wrapperRef}>
-      <div id="smooth-content" ref={contentRef}>
-        {/* Navigation Indicator */}
-        <div className="fixed right-2 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 z-50 opacity-50">
+       {/* Navigation Indicator
+        <div className="absulate right-2 flex flex-col gap-3 z-50">
           {['hero', 'about', 'service', 'features', 'webdevshowcase', 'workdetails', 'collaborationsection'].map((sectionId) => (
             <button
               key={sectionId}
@@ -163,8 +162,8 @@ function MainSite() {
               title={sectionId}
             />
           ))}
-        </div>
-
+        </div> */}
+      <div id="smooth-content" ref={contentRef}>
         <section id="hero"><Herosection contactInfo={data.contactInfo} introduction={data.introduction} onScrollToAbout={() => scrollToSection('about')} /></section>
         <section id="about"><Aboutsection onScrollToHero={() => scrollToSection('service')} /></section>
         <section id="service"><Servicesection skills={data.skills} onScrollToHero={() => scrollToSection('features')} /></section>

@@ -59,7 +59,7 @@ export default function CollaborationSection() {
 
         {/* Description */}
         <div className="collaboration-content text-center px-4 mt-8">
-          <p className="collaboration-text px-10">
+          <p className=" text-[14px] md:text-[16px] lg:text-[20px] px-10">
             We believe in the power of collaboration and communication, working
             closely with clients to understand their vision and goals. Our
             commitment to continuous learning and staying updated with the
