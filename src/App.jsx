@@ -78,7 +78,7 @@ function MainSite() {
         wrapper: wrapperRef.current,
         content: contentRef.current,
         smooth: 0.7,
-        smoothTouch: 0.5,
+
       });
       // Store smoother instance on ref to kill later
       wrapperRef.current.smoother = smoother;

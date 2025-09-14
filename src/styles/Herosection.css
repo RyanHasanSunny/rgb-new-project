@@ -14,7 +14,7 @@
 .hero-email {
   position: absolute;
   left: 5%;
-  top: 94vh;
+  top: 87vh;
   width: 3%;
 }
 
@@ -37,8 +37,6 @@
 
 
 .email-text {
-  top: 20%;
-  left: 0%;
   white-space: nowrap;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -148,7 +146,7 @@
 }
 .arrow-container-down {
   position:absolute;
-  top: 90vh;
+  top: 83vh;
   right: 5%;
   display: flex;
   border-right: 3px solid white;
@@ -342,7 +340,7 @@
   }
   
   .hero-email {
-    left: 3%;
+    left: 5%;
     bottom: 3%;
   }
   
@@ -397,7 +395,7 @@
   }
   
   .hero-email {
-    left: 2.5%;
+    left: 5%;
     bottom: 2.5%;
   }
   
@@ -454,7 +452,7 @@
   }
   
   .hero-email {
-    left: 2%;
+    left: 5%;
     bottom: 2%;
   }
   
@@ -489,7 +487,7 @@
   }
   
   .email-text {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
