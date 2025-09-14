@@ -36,22 +36,22 @@ const Herosection = ({ contactInfo, introduction, onScrollToAbout }) => {
         </div>
       </div>
 
-      {/* More Button - Top Right */}
+      
+
+      <div className="contact-info p-6 ">
+        {/* More Button - Top Right */}
       <div className="hero-more">
-        <a href="#about" className="arrow-container-top" aria-label="Scroll to about section">
-       
-      </a>
         <div className="more-button">
           <div className="line"></div>
           <div className="line"></div>
         </div>
       </div>
-
-      <div className="contact-info p-6 ">
       {/* Email - Bottom Left Rotated */}
       <div className="hero-email">
         <h2 className="email-text">{contactInfo.email || "ryangraphicboy@gmail.com"}</h2>
       </div>
+
+       <a href="#about" className="arrow-container-top" aria-label="Scroll to about section"></a>
       {/* Animated Arrow - Bottom Right */}
       <a href="#about" className="arrow-container-down" aria-label="Scroll to about section">
       

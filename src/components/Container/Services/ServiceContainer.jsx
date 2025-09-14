@@ -34,15 +34,15 @@ const ServiceContainer = ({ title, description, Icon, iconList = [] }) => {
         initial={{ opacity: 0, x: 100 }}
         animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        className="content-wrapper text-center md:text-left px-4"
+        className=" text-center md:text-left px-4"
       >
-        <h2 className="title text-2xl md:text-4xl py-2 font-bold text-white">
+        <h2 className=" text-2xl md:text-4xl py-2 font-bold text-white">
           {title}
         </h2>
 
         <div className="divider my-4 h-1 w-full bg-cyan-500 mx-auto md:mx-0"></div>
 
-        <p className="text-gray-300 leading-relaxed max-w-md md:max-w-lg">
+        <p className="text-gray-300 text-[14px] md:text-[16px] lg:text-[18px] leading-relaxed max-w-md md:max-w-lg">
           {description}
         </p>
 

@@ -11,7 +11,7 @@
 }
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 24px;
   font-weight: 300;
 }
 
@@ -43,7 +43,7 @@ h1 {
 }
 
 .main-title {
-  font-size: 2.25rem;
+  font-size: 32px;
   font-weight: 800;
   margin-bottom: 1rem;
   text-align: center
@@ -129,7 +129,7 @@ h1 {
   }
   
   .description {
-    font-size: 18px;
+    font-size: 24px;
     max-width: 40rem;
   }
   
@@ -152,7 +152,7 @@ h1 {
     padding-right: 5rem;
   }
   .description {
-    font-size: 16px;
+    font-size: 24px;
     max-width: 36rem;
   } 
 }

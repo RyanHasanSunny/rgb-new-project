@@ -14,7 +14,7 @@
 .hero-email {
   position: absolute;
   left: 5%;
-  bottom: 2%;
+  top: 94vh;
   width: 3%;
 }
 
@@ -37,7 +37,7 @@
 
 
 .email-text {
-  bottom: 20%;
+  top: 20%;
   left: 0%;
   white-space: nowrap;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -89,13 +89,15 @@
   background-color: #f0f0f0;
 }
 
+ .hero-more {
+   position: absolute;
+   right: 3%;
+   top: 40px;
+  }
 
 
 /* More button */
 .more-button {
-  position: absolute;
-  top: 5%;
-  right: 3%;
   white-space: nowrap;
   display: flex;
   flex-direction: column;
@@ -145,8 +147,8 @@
 
 }
 .arrow-container-down {
-  position: absolute;
-  bottom: 40px;
+  position:absolute;
+  top: 90vh;
   right: 5%;
   display: flex;
   border-right: 3px solid white;
@@ -219,7 +221,7 @@
   }
   
   .email-text {
-    font-size: 1rem;
+    font-size: 20px;
   }
 }
 
@@ -258,10 +260,15 @@
     font-size: 7rem;
     letter-spacing: 0.4rem;
   }
+   .email-text {
+    font-size: 20px;
+  }
   
-  .hero-email, .hero-more {
+   .hero-more {
     width: 4%;
   }
+
+ 
   
   .Dot {
     width: 28px;
@@ -319,7 +326,7 @@
   }
   
   .email-text {
-    font-size: 0.9rem;
+    font-size: 18px;
   }
 }
 
@@ -370,7 +377,7 @@
   }
   
   .email-text {
-    font-size: 0.8rem;
+    font-size: 18px;
   }
 }
 
@@ -425,7 +432,7 @@
   }
   
   .email-text {
-    font-size: 0.75rem;
+    font-size: 14px;
   }
 }
 
@@ -482,7 +489,7 @@
   }
   
   .email-text {
-    font-size: 0.7rem;
+    font-size: 14px;
   }
 }
 

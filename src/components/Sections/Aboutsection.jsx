@@ -17,14 +17,14 @@ export default function Aboutsection() {
       {/* Main Content */}
       <div className="flex flex-col items-center justify-center sm:px-6 md:px-10">
         <div className="content-wrapper max-w-xl w-full">
-          <h2 className="main-title text-white sm:text-3xl md:text-4xl">It's me</h2>
+          <h2 className="main-title text-white">It's me</h2>
 
           <div className="img-name-wrapper gap-4 p-6 flex-wrap sm:flex-nowrap">
             <div className="w-36 h-36 bg-gray-800 rounded-half flex items-center justify-center shrink-0">
               <img src={Ryan} alt="Profile" className="" />
             </div>
-            <div className="flex flex-col text-white">
-              <h3 className="text-base sm:text-lg font-semibold">Ryan Hasan Sunny</h3>
+            <div className="flex flex-col gap-2 text-white">
+              <h3 className="text-base  lg:text-2xl font-semibold">Ryan Hasan Sunny</h3>
               <p className="text-sm text-gray-400 leading-snug">
                 Graphic Designer || Game Developer || Web Designer
               </p>
@@ -33,7 +33,7 @@ export default function Aboutsection() {
 
           <div className="divider h-px bg-gray-700 w-full" />
 
-          <p className=" text-center text-gray-300 leading-relaxed"> 
+          <p className=" text-center text-[14px] md:text-[16px] lg:text-[18px] text-gray-300 leading-relaxed"> 
             I believe in the power of collaboration and communication, working closely with clients to understand their vision and goals. My commitment to continuous learning and staying updated with the latest trends in design and development allows me to bring fresh ideas and innovative solutions to the table.
           </p>
         </div>
