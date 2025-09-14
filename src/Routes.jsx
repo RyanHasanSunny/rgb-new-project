@@ -1,5 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+
+function useDocumentTitle(title) {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+}
 import Herosection from './components/Sections/Herosection';
 import Aboutsection from './components/Sections/Aboutsection';
 import Servicesection from './components/Sections/Servicesection';
@@ -133,8 +140,79 @@ function MainSite() {
   if (loaderVisible) return <Loader fadeOut={!loading} />;
   if (error) return <div className="error-message">{error}</div>;
 
+  // Dynamic meta tags based on current section
+  const getMetaTags = () => {
+    const baseTitle = "Ryan - Graphic Designer, Game Developer & Web Designer Portfolio";
+    const baseDescription = "Portfolio of Ryan, a Graphic Designer, Game Developer, and Web Designer. Explore innovative services and creative projects.";
+    const baseUrl = "https://ryangraphicboy.netlify.app/";
+
+    switch (currentSection) {
+      case 'hero':
+        return {
+          title: baseTitle,
+          description: baseDescription,
+          url: baseUrl
+        };
+      case 'about':
+        return {
+          title: "About Ryan - Graphic Designer & Developer",
+          description: "Learn about Ryan's background in graphic design, game development, and web design. Discover his skills and passion for creative projects.",
+          url: `${baseUrl}#about`
+        };
+      case 'service':
+        return {
+          title: "Services - Graphic Design, Game Dev, Web Design",
+          description: "Explore Ryan's professional services including graphic design, game development, and web design. Innovative solutions for your projects.",
+          url: `${baseUrl}#service`
+        };
+      case 'features':
+        return {
+          title: "Portfolio - Creative Projects by Ryan",
+          description: "View Ryan's portfolio of graphic design, game development, and web design projects. Showcasing innovative and creative work.",
+          url: `${baseUrl}#features`
+        };
+      case 'webdevshowcase':
+        return {
+          title: "Web Development Showcase - Ryan's Projects",
+          description: "Explore Ryan's web development projects and showcases. Modern, responsive, and innovative web solutions.",
+          url: `${baseUrl}#webdevshowcase`
+        };
+      case 'workdetails':
+        return {
+          title: "Work Details - Ryan's Professional Experience",
+          description: "Detailed overview of Ryan's work experience and professional journey in design and development.",
+          url: `${baseUrl}#workdetails`
+        };
+      case 'collaborationsection':
+        return {
+          title: "Let's Collaborate - Contact Ryan",
+          description: "Ready to work together? Contact Ryan for graphic design, game development, or web design projects.",
+          url: `${baseUrl}#collaborationsection`
+        };
+      default:
+        return {
+          title: baseTitle,
+          description: baseDescription,
+          url: baseUrl
+        };
+    }
+  };
+
+  const meta = getMetaTags();
+
   return (
     <>
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:url" content={meta.url} />
+        <meta property="twitter:title" content={meta.title} />
+        <meta property="twitter:description" content={meta.description} />
+        <meta property="twitter:url" content={meta.url} />
+        <link rel="canonical" href={meta.url} />
+      </Helmet>
       <div id="smooth-wrapper" style={{ overflow: 'hidden' }} ref={wrapperRef}>
         <div id="smooth-content" ref={contentRef}>
           <section id="hero"><Herosection contactInfo={data.contactInfo} introduction={data.introduction} onScrollToAbout={() => scrollToSection('about')} /></section>

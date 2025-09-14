@@ -1,22 +1,27 @@
-# TODO for Making About Section Dynamic
+# SEO Improvements for Portfolio Site
 
-- [x] Add fetchAbout function in src/api.jsx to fetch name, description, and image URL from Firestore "about" collection.
-- [x] Update src/components/Sections/Aboutsection.jsx to:
-  - Use React hooks to fetch About data on mount.
-  - Display dynamic name, description, and image (fallback to static image if no URL).
-  - Handle loading and error states gracefully.
-- [ ] Test the About section to verify dynamic data rendering.
-- [ ] Optionally update backend to store image URL if not present.
+## Information Gathered
+- React SPA portfolio for Ryan (Graphic Designer, Game Developer, Web Designer)
+- Domain: ryangraphicboy.netlify.app
+- Current SEO setup has placeholders and basic meta tags
+- No dynamic meta tags or structured data
+- Sitemap only includes home page
 
-# SEO Improvements Completed
+## Plan
+- [ ] Update index.html: Improve title, add canonical link, replace placeholders with actual domain
+- [ ] Update public/robots.txt: Replace placeholder URL with actual domain
+- [ ] Update public/sitemap.xml: Replace placeholder URL with actual domain
+- [ ] Add structured data (JSON-LD) for portfolio in index.html
+- [ ] Install react-helmet for dynamic meta tags (optional for SPA sections)
+- [ ] Check and ensure images have alt text in components
 
-- [x] Install react-helmet-async for dynamic meta tags
-- [x] Enhance index.html with comprehensive meta tags (description, Open Graph, Twitter Cards)
-- [x] Implement Helmet in App.jsx for route-specific meta tags
-- [x] Add robots.txt to public/ for crawler instructions
-- [x] Add sitemap.xml to public/ for site structure
-- [x] Implement JSON-LD structured data for Person/portfolio schema
-- [x] Add canonical URLs in Helmet
-- [x] Review and ensure all images have descriptive alt attributes (already present)
-- [x] Optimize heading hierarchy across components (h1 in hero, h2 in about/services, proper nesting)
-- [ ] Consider prerendering for better SEO (suggest vite-plugin-ssr or similar for server-side rendering)
+## Dependent Files to be edited
+- index.html
+- public/robots.txt
+- public/sitemap.xml
+- package.json (if adding react-helmet)
+
+## Followup steps
+- [ ] Test the site after changes
+- [ ] Submit sitemap to Google Search Console
+- [ ] Verify meta tags with tools like Open Graph checker
