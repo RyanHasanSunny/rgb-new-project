@@ -170,7 +170,7 @@ function MainSite() {
         <section id="features"><FeatureSection portfolio={data.portfolio} categories={data.categories} onScrollToHero={() => scrollToSection('webdevshowcase')} /></section>
         <section id="webdevshowcase"><WebDevShowcase /></section>
         <section id="workdetails"><Workdetails onScrollToHero={() => scrollToSection('hero')} /></section>
-        <section id="collaborationsection"><Collaboration onScrollToHero={() => scrollToSection('hero')} /></section>
+        <section id="collaborationsection"><Collaboration contactInfo={data.contactInfo} onScrollToHero={() => scrollToSection('hero')} /></section>
 
         <Footer />
       </div>

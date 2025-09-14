@@ -48,7 +48,9 @@ const Herosection = ({ contactInfo, introduction, onScrollToAbout }) => {
       </div>
       {/* Email - Bottom Left Rotated */}
       <div className="hero-email">
-        <h2 className="email-text">{contactInfo.email || "ryangraphicboy@gmail.com"}</h2>
+        <a href={`mailto:${contactInfo.email || "ryangraphicboy@gmail.com"}`} className="email-text" aria-label="Send email">
+          {contactInfo.email || "ryangraphicboy@gmail.com"}
+        </a>
       </div>
 
        <a href="#about" className="arrow-container-top" aria-label="Scroll to about section"></a>

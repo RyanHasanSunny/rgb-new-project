@@ -4,11 +4,11 @@ import "../../styles/FeatureSection.css";
 import RocketIcon from "../../assets/Rocket.svg";
 import Land from "../../assets/Land.svg";
 
-export default function CollaborationSection() {
+export default function CollaborationSection({ contactInfo }) {
   const sendEmail = (subject) => {
-    const email = "ryangraphicboy@gmail.com";
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}`;
-    window.open(gmailLink, "_blank");
+    const email = contactInfo?.email || "ryangraphicboy@gmail.com";
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+    window.location.href = mailtoLink;
   };
 
   return (
