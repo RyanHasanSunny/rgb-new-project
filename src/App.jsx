@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { HelmetProvider } from 'react-helmet-async';
 import Routes from './Routes';
 
 function App() {
@@ -15,9 +14,7 @@ function App() {
   }, []);
 
   return (
-    <HelmetProvider>
-      <Routes isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
-    </HelmetProvider>
+    <Routes isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
   );
 }
 

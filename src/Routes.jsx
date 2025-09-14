@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import Herosection from './components/Sections/Herosection';
 import Aboutsection from './components/Sections/Aboutsection';
 import Servicesection from './components/Sections/Servicesection';
@@ -136,54 +135,6 @@ function MainSite() {
 
   return (
     <>
-      <Helmet>
-        <title>{data.introduction.name ? `${data.introduction.name} - Portfolio` : 'RGB - Portfolio'}</title>
-        <meta name="description" content={`Portfolio of ${data.introduction.name || 'Ryan'}, a Graphic Designer, Game Developer, and Web Designer. Explore innovative services and creative projects.`} />
-        <meta name="keywords" content="graphic design, game development, web design, portfolio, Ryan" />
-        <meta name="author" content={data.introduction.name || 'Ryan'} />
-        <link rel="canonical" href={window.location.origin} />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.origin} />
-        <meta property="og:title" content={`${data.introduction.name || 'Ryan'} - Portfolio`} />
-        <meta property="og:description" content={`Portfolio of ${data.introduction.name || 'Ryan'}, a Graphic Designer, Game Developer, and Web Designer. Explore innovative services and creative projects.`} />
-        <meta property="og:image" content={`${window.location.origin}/Ryan.jpg`} />
-
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={window.location.origin} />
-        <meta property="twitter:title" content={`${data.introduction.name || 'Ryan'} - Portfolio`} />
-        <meta property="twitter:description" content={`Portfolio of ${data.introduction.name || 'Ryan'}, a Graphic Designer, Game Developer, and Web Designer. Explore innovative services and creative projects.`} />
-        <meta property="twitter:image" content={`${window.location.origin}/Ryan.jpg`} />
-
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": data.introduction.name || "Ryan",
-            "jobTitle": "Graphic Designer, Game Developer, Web Designer",
-            "url": window.location.origin,
-            "sameAs": [
-              data.introduction.linkedin,
-              data.introduction.facebook,
-              data.introduction.instagram,
-              data.introduction.artstation
-            ].filter(Boolean),
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "email": data.contactInfo.email,
-              "telephone": data.contactInfo.phone,
-              "contactType": "customer service"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": data.contactInfo.address
-            }
-          })}
-        </script>
-      </Helmet>
       <div id="smooth-wrapper" style={{ overflow: 'hidden' }} ref={wrapperRef}>
         <div id="smooth-content" ref={contentRef}>
           <section id="hero"><Herosection contactInfo={data.contactInfo} introduction={data.introduction} onScrollToAbout={() => scrollToSection('about')} /></section>
