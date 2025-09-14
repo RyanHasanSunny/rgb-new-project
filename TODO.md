@@ -1,6 +1,9 @@
-# TODO: Make Loader Stay at Least 3 Seconds
+# TODO for Making About Section Dynamic
 
-- [x] Modify fetchAllData in src/App.jsx to ensure loader displays for at least 3 seconds
-- [x] Add fade-out animation to loader disappearance
-- [x] Add fade-in animation to main page appearance
-- [x] Test the loader duration and animation
+- [x] Add fetchAbout function in src/api.jsx to fetch name, description, and image URL from Firestore "about" collection.
+- [x] Update src/components/Sections/Aboutsection.jsx to:
+  - Use React hooks to fetch About data on mount.
+  - Display dynamic name, description, and image (fallback to static image if no URL).
+  - Handle loading and error states gracefully.
+- [ ] Test the About section to verify dynamic data rendering.
+- [ ] Optionally update backend to store image URL if not present.

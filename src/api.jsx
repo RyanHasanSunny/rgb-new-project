@@ -79,4 +79,22 @@ export const fetchCategories = async () => {
   }
 };
 
+export const fetchAbout = async () => {
+  try {
+    const aboutDoc = await getDocs(collection(db, "about"));
+    if (!aboutDoc.empty) {
+      const aboutData = aboutDoc.docs[0].data();
+      return {
+        name: aboutData.name || "",
+        description: aboutData.description || "",
+        imageUrl: aboutData.imageUrl || null,
+      };
+    }
+    return { name: "", description: "", imageUrl: null };
+  } catch (error) {
+    console.error("Error fetching about data: ", error);
+    return { name: "", description: "", imageUrl: null };
+  }
+};
+
 

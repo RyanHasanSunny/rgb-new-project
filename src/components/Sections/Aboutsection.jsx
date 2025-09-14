@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import "../../styles/Aboutsection.css";
-import Ryan from '../../assets/Ryan.png'; // Assuming you have a profile image
+import Ryan from '../../assets/Ryan.png'; // fallback image
+import { fetchAbout } from '../../api';
 
 export default function Aboutsection() {
+  const [aboutData, setAboutData] = useState({
+    name: '',
+    description: '',
+    imageUrl: null,
+  });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const getAboutData = async () => {
+      try {
+        const data = await fetchAbout();
+        setAboutData(data);
+      } catch (err) {
+        setError('Failed to load about data');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getAboutData();
+  }, []);
+
+  if (loading) {
+    return <div className="aboutsection flex flex-col h-full px-[5%] py-8 space-y-8 text-white">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="aboutsection flex flex-col h-full px-[5%] py-8 space-y-8 text-red-500">{error}</div>;
+  }
+
   return (
     <div
       id='aboutsection'
@@ -21,12 +53,12 @@ export default function Aboutsection() {
 
           <div className="img-name-wrapper gap-4 p-6 flex-wrap sm:flex-nowrap">
             <div className="w-36 h-36 bg-gray-800 rounded-half flex items-center justify-center shrink-0">
-              <img src={Ryan} alt="Profile" className="" />
+              <img src={aboutData.imageUrl || Ryan} alt="Profile" className="" />
             </div>
             <div className="flex flex-col gap-2 text-white">
-              <h3 className="text-base  lg:text-2xl font-semibold">Ryan Hasan Sunny</h3>
+              <h3 className="text-base  lg:text-2xl font-semibold">{aboutData.name}</h3>
               <p className="text-sm text-gray-400 leading-snug">
-                Graphic Designer || Game Developer || Web Designer
+                {aboutData.titleLine || "Graphic Designer || Game Developer || Web Designer"}
               </p>
             </div>
           </div>
@@ -34,7 +66,7 @@ export default function Aboutsection() {
           <div className="divider h-px bg-gray-700 w-full" />
 
           <p className=" text-center text-[14px] md:text-[16px] lg:text-[18px] text-gray-300 leading-relaxed"> 
-            I believe in the power of collaboration and communication, working closely with clients to understand their vision and goals. My commitment to continuous learning and staying updated with the latest trends in design and development allows me to bring fresh ideas and innovative solutions to the table.
+            {aboutData.description}
           </p>
         </div>
       </div>
